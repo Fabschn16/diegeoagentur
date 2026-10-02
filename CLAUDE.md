@@ -8,11 +8,11 @@ Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4. Statischer Expor
 - `npm run build` – statischer Export nach `out/`
 - `npx tsc --noEmit` – Typprüfung
 
-## Deployment (Netlify, manuell)
-1. `rm -rf out .next && npm run build`
-2. Inhalt von `out/` zippen: `cd out && zip -qr ../diegeoagentur-website.zip . && cd ..`
-3. Netlify → Projekt „diegeoagentur“ → Deploys (oder Projektübersicht „Already built it?“) → ZIP hineinziehen
-4. Danach Sitemap `https://diegeoagentur.de/sitemap.xml` in Google Search Console und Bing Webmaster Tools neu einreichen
+## Deployment (Netlify, automatisch)
+- Netlify ist mit GitHub verbunden und deployt jeden Merge in `main` automatisch. Kein manuelles ZIP-Hochladen mehr.
+- Änderungen immer als Pull Request auf `main` einreichen, nicht direkt auf `main` pushen.
+- Vor dem PR lokal prüfen: `npx tsc --noEmit` und `npm run build`
+- Nach dem Deploy bei neuen oder geänderten URLs die Sitemap `https://diegeoagentur.de/sitemap.xml` in Google Search Console und Bing Webmaster Tools neu einreichen
 
 ## Wo was liegt
 - `lib/site.ts` – zentrale Unternehmensdaten, Team, **Preise** (`pricing`) – überall verwendet (Seiten, Schema, llms.txt)
