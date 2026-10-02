@@ -51,7 +51,7 @@ export function Footer() {
             </FooterCol>
             <FooterCol title="Agentur">
               <FooterLink href="/ueber-uns">Über uns</FooterLink>
-              <FooterLink href="/fakten">Fakten auf einen Blick</FooterLink>
+              <FooterLink href="/fakten">Fakten zur Agentur</FooterLink>
               <FooterLink href="/geo-agentur">GEO Agentur</FooterLink>
               <FooterLink href="/generative-engine-optimization">Was ist GEO?</FooterLink>
               <FooterLink href="/ratgeber">GEO Wissen</FooterLink>
