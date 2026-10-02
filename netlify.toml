@@ -1,0 +1,7 @@
+# Für automatische Deploys aus Git: baut den statischen Export nach out/
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
