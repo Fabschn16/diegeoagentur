@@ -41,7 +41,7 @@ export function PlatformStrip() {
           <h3 className="eyebrow text-muted">Unternehmen, die wir betreuen</h3>
           <ul className="mt-6 grid grid-cols-3 items-center gap-x-8 gap-y-6 sm:grid-cols-6">
             {clients.map((c) => (
-              <li key={c.name} className="relative h-10 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
+              <li key={c.name} className="relative h-10">
                 <Image src={c.logo} alt={c.name} fill sizes="160px" className="object-contain" />
               </li>
             ))}
