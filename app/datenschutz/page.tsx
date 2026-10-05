@@ -67,8 +67,8 @@ export default function DatenschutzPage() {
 
       <h2>6. Cookies und Einwilligungsverwaltung</h2>
       <p>
-        Wir verwenden ein Consent-Management-Tool (Real Cookie Banner, devowl.io GmbH), um Einwilligungen datenschutzkonform einzuholen und zu
-        verwalten. Session-Cookies werden nach dem Schließen des Browsers gelöscht, dauerhafte Cookies bleiben für den jeweils angegebenen
+        Wir verwenden ein eigenes Cookie-Banner, um Einwilligungen einzuholen und zu verwalten. Ihre Auswahl wird im lokalen Speicher Ihres
+        Browsers abgelegt (Schlüssel „dga-consent-v1“); Dienste wie der Google Tag Manager werden erst nach Ihrer Einwilligung geladen. Session-Cookies werden nach dem Schließen des Browsers gelöscht, dauerhafte Cookies bleiben für den jeweils angegebenen
         Zeitraum gespeichert. Einwilligungen können jederzeit über die Cookie-Einstellungen widerrufen werden. Der Nutzung zu Zwecken
         interessenbezogener Werbung können Sie zudem unter{" "}
         <a href="https://www.youronlinechoices.eu" target="_blank" rel="noopener">

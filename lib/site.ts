@@ -94,6 +94,11 @@ export const clients = [
   { name: "Pure Natural Choice", logo: "/images/kunden/pure-natural-choice.png" },
 ] as const;
 
+/** Google Tag Manager (GA4 läuft über den Container). Leer = kein Tracking. Geladen wird erst nach Einwilligung. */
+export const analytics = {
+  gtmId: "",
+} as const;
+
 export const cta = {
   primary: { label: "KI-Sichtbarkeit prüfen lassen", href: "/geo-audit#check" },
   primaryShort: { label: "KI-Sichtbarkeit prüfen", href: "/geo-audit#check" },

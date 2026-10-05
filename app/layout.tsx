@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 import { graph, organizationSchema, parentOrganizationSchema, personSchemas, websiteSchema } from "@/lib/schema";
 
 const geist = localFont({
@@ -56,6 +57,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de" className={`${geist.variable} ${geistMono.variable} ${instrument.variable}`}>
       <body>
+        {/* Google Consent Mode v2: alles abgelehnt, bis das Cookie-Banner eine Einwilligung meldet */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});",
+          }}
+        />
         <a
           href="#inhalt"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
@@ -67,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="inhalt">{children}</main>
         <Footer />
         <RevealObserver />
+        <CookieBanner />
       </body>
     </html>
   );
