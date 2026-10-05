@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsLink } from "@/components/ui/CookieBanner";
 import { Logo } from "@/components/ui/Logo";
 import { ArrowUpRight } from "@/components/ui/Icons";
 import { site, platforms } from "@/lib/site";
@@ -98,6 +99,7 @@ export function Footer({ locale = "de" }: { locale?: Locale }) {
             <Link href="/datenschutz" className="hover:text-paper" hrefLang="de">
               {ui.privacy}
             </Link>
+            <CookieSettingsLink className="hover:text-paper" />
           </div>
         </div>
       </div>

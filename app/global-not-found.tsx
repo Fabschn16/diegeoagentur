@@ -4,6 +4,7 @@ import { fontVars } from "./fonts";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 
 export const metadata: Metadata = {
   title: "Seite nicht gefunden | Die GEO Agentur",
@@ -38,6 +39,7 @@ export default function GlobalNotFound() {
           </section>
         </main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
