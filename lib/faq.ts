@@ -130,7 +130,7 @@ export const mainFaq: Faq[] = [
   {
     q: "Welche KI-Suchmaschinen sind für Unternehmen relevant?",
     a: [
-      "Die wichtigsten Systeme sind aktuell ChatGPT (OpenAI), Google Gemini, Google AI Overviews und der AI Mode in der Google-Suche, Perplexity, Microsoft Copilot und Claude (Anthropic).",
+      "Die wichtigsten Systeme sind aktuell ChatGPT (OpenAI), Google Gemini, Google AI Overviews und der AI Mode in der Google-Suche, Perplexity, Microsoft Copilot, Claude (Anthropic) und Meta AI, das in WhatsApp, Instagram und Facebook integriert ist.",
       "Welche davon für ein Unternehmen am wichtigsten sind, hängt von der Zielgruppe ab. Im GEO Audit priorisieren wir die Plattformen, auf denen Ihre Kunden tatsächlich recherchieren.",
     ],
   },

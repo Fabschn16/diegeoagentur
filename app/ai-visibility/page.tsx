@@ -113,7 +113,7 @@ export default function AiVisibilityPage() {
           <AtAGlance
             rows={[
               { k: "Leistung", v: "AI Visibility Monitoring (GEO Monitoring)" },
-              { k: "Plattformen", v: "ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot" },
+              { k: "Plattformen", v: "ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, Meta AI" },
               { k: "Grundlage", v: "Offengelegter Prompt-Katalog aus echten Kundenfragen" },
               { k: "Rhythmus", v: "Monatlich, zusätzlich nach größeren Änderungen" },
               { k: "Ergebnis", v: "Reporting mit Entwicklung, Quellen und Empfehlungen" },

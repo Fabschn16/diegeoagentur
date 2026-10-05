@@ -9,6 +9,77 @@ const OKT_2026 = "2026-10-01";
 export const newArticles: Article[] = [
   /* ───────────────────────────── PLATTFORMEN ───────────────────────────── */
   {
+    slug: "meta-ai",
+    title: "Meta AI: Was Unternehmen über den KI-Assistenten in WhatsApp, Instagram und Facebook wissen sollten",
+    metaTitle: "Meta AI für Unternehmen: Sichtbarkeit im KI-Assistenten von Meta",
+    description:
+      "Meta AI ist in WhatsApp, Instagram, Facebook und Messenger integriert. Wie der KI-Assistent Informationen aus dem Web nutzt, welche Meta-Crawler relevant sind und was Unternehmen für ihre Sichtbarkeit tun können.",
+    category: "Plattformen",
+    published: OKT_2026,
+    updated: OKT_2026,
+    readingMinutes: 5,
+    author: "jan",
+    topics: ["Meta AI", "WhatsApp", "Instagram", "KI-Crawler", "AI Visibility"],
+    answer:
+      "Meta AI ist der KI-Assistent von Meta und direkt in WhatsApp, Instagram, Facebook und Messenger eingebaut. In Deutschland ist er seit März 2025 verfügbar. Meta AI kann auf Informationen aus dem Internet zugreifen; dafür betreibt Meta eigene Crawler, die Website-Betreiber in der robots.txt steuern können. Für Unternehmen gelten dieselben Grundlagen wie bei anderen KI-Assistenten: zugängliche Seiten, klare Antworten und eine eindeutige Markenentität.",
+    body: [
+      { type: "h2", text: "Was ist Meta AI?" },
+      {
+        type: "p",
+        text: "Meta AI ist ein Chat-Assistent, den Nutzer über ein blaues, rundes Symbol in WhatsApp, Instagram, Facebook und Messenger aufrufen. In WhatsApp lässt er sich auch in Gruppenchats mit „@Meta AI“ ansprechen. Zum Start in Europa im März 2025 war Meta AI als reiner Text-Assistent verfügbar; Funktionen wie Bild- und Spracherkennung, die es in den USA gibt, fehlten zunächst.",
+      },
+      {
+        type: "p",
+        text: "Der Unterschied zu ChatGPT oder Perplexity: Nutzer müssen keine eigene App öffnen. Meta AI steht dort zur Verfügung, wo viele Menschen ohnehin täglich kommunizieren. Fragen nach Empfehlungen, Anbietern oder Produkten landen dadurch auch in Messenger-Apps.",
+      },
+      { type: "h2", text: "Welche Meta-Crawler relevant sind" },
+      {
+        type: "p",
+        text: "Meta dokumentiert mehrere Crawler mit unterschiedlichen Aufgaben. Sie lassen sich getrennt in der robots.txt steuern:",
+      },
+      {
+        type: "table",
+        head: ["Crawler", "Zweck laut Meta"],
+        rows: [
+          ["Meta-WebIndexer", "Verbessert die Qualität und Relevanz von Suchergebnissen in Meta AI"],
+          ["Meta-ExternalFetcher", "Ruft einzelne Links ab, wenn Nutzer das anfragen"],
+          ["Meta-ExternalAgent", "Training von KI-Modellen und Indexierung von Inhalten für Produkte"],
+          ["facebookexternalhit", "Erstellt Linkvorschauen, wenn Inhalte in Meta-Apps geteilt werden"],
+        ],
+      },
+      {
+        type: "p",
+        text: "Wer in Meta AI mit aktuellen Informationen berücksichtigt werden möchte, sollte Meta-WebIndexer und Meta-ExternalFetcher nicht blockieren. Ob Inhalte zusätzlich über Meta-ExternalAgent für Training freigegeben werden, ist wie bei GPTBot eine strategische Entscheidung, die wir mit Kunden im [GEO Audit](/geo-audit) besprechen.",
+      },
+      { type: "h2", text: "Was Unternehmen tun können" },
+      {
+        type: "ol",
+        items: [
+          "Robots.txt, Firewall- und CDN-Regeln prüfen, damit die Meta-Crawler Ihre Seiten erreichen.",
+          "Inhalte, die konkrete Fragen im ersten Satz beantworten – siehe [Answer Engine Optimization](/ratgeber/answer-engine-optimization).",
+          "Eine eindeutige, konsistente Beschreibung der Marke auf Website, Profilen und Verzeichnissen – siehe [Entity Optimization](/ratgeber/entity-optimization).",
+          "Gepflegte Unternehmensauftritte auf Facebook und Instagram mit denselben Angaben wie auf der Website.",
+          "Regelmäßige Messung über einen festen Prompt-Katalog, der Meta AI einschließt – siehe [AI Visibility](/ai-visibility).",
+        ],
+      },
+      { type: "h2", text: "Was sich (noch) nicht sagen lässt" },
+      {
+        type: "p",
+        text: "Wie Meta AI Quellen für eine Antwort auswählt und gewichtet, legt Meta nicht im Detail offen. Belastbare Aussagen dazu, ob etwa eine aktive Instagram-Präsenz die Nennung in Meta AI direkt beeinflusst, gibt es bisher nicht. Wir behandeln Meta AI deshalb wie jede andere Plattform: messen, was tatsächlich in den Antworten steht, und daraus Maßnahmen ableiten. Eine Nennung garantieren kann niemand.",
+      },
+    ],
+    related: [
+      { label: "Microsoft Copilot und Claude", href: "/ratgeber/copilot-und-claude" },
+      { label: "ChatGPT SEO", href: "/chatgpt-seo" },
+      { label: "AI Visibility messen", href: "/ai-visibility" },
+    ],
+    sources: [
+      { label: "Meta for Developers: Meta Web Crawlers", href: "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers" },
+      { label: "heise online: Meta AI startet in der EU", href: "https://heise.de/-10322059" },
+      { label: "BASIC thinking: Meta AI startet in Deutschland (20.03.2025)", href: "https://www.basicthinking.de/blog/2025/03/20/meta-ai-deutschlandstart" },
+    ],
+  },
+  {
     slug: "google-ai-mode",
     title: "Google AI Mode: Was Unternehmen jetzt wissen müssen",
     metaTitle: "Google AI Mode (KI-Modus): Was Unternehmen wissen müssen",
