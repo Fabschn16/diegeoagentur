@@ -48,7 +48,7 @@ export function PlatformStrip() {
           </ul>
         </div>
         <p className="mt-8 text-[0.74rem] text-muted/80">
-          Plattformnamen dienen ausschließlich der Einordnung. Es besteht keine Partnerschaft mit den genannten Anbietern. Kennzahlen: Daily Rocket, Stand September 2026.
+          Kennzahlen: Daily Rocket, Stand September 2026.
         </p>
       </div>
     </section>
