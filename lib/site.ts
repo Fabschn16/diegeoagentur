@@ -83,27 +83,28 @@ export const provenStats = [
 
 /**
  * Kunden von Daily Rocket, die laut Fabian (Okt. 2026) auch im Bereich KI/GEO betreut werden.
- * Logos von dailyrocket.de, abgelegt unter public/images/kunden/.
+ * Logos werden direkt von dailyrocket.de geladen. Die Dateinamen enthalten Build-Hashes:
+ * nach einem Relaunch von dailyrocket.de die Pfade prüfen oder die Logos lokal unter public/ ablegen.
  */
 export const clients = [
-  { name: "Thomas Hoof Produktgesellschaft", logo: "/images/kunden/thpg.svg" },
-  { name: "TBR Safety Solutions", logo: "/images/kunden/tbr-safety.png" },
-  { name: "MAX2H", logo: "/images/kunden/max2h.png" },
-  { name: "Bogner Metall", logo: "/images/kunden/bogner-metall.png" },
-  { name: "Venitec", logo: "/images/kunden/venitec.svg" },
-  { name: "Elbmatch", logo: "/images/kunden/elbmatch.svg" },
-  { name: "Movemates", logo: "/images/kunden/movemates.jpg" },
-  { name: "Stealth Performance", logo: "/images/kunden/stealth-performance.png" },
-  { name: "Pure Natural Choice", logo: "/images/kunden/pure-natural-choice.png" },
-  { name: "Zwoo", logo: "/images/kunden/zwoo.png" },
-  { name: "Essbare Landschaften", logo: "/images/kunden/essbare-landschaften.svg" },
-  { name: "Hof in der Au", logo: "/images/kunden/hof-in-der-au.svg" },
-  { name: "Deutsche Entrümpelungskonzepte", logo: "/images/kunden/deutsche-entruempelungskonzepte.webp" },
-  { name: "Rhein Umzüge", logo: "/images/kunden/rhein-umzuege.png" },
-  { name: "Rohrreinigung Priller", logo: "/images/kunden/rohrreinigung-priller.png" },
-  { name: "Pflegedienst Perle", logo: "/images/kunden/pflegedienst-perle.png" },
-  { name: "Tierarztpraxis Steininger", logo: "/images/kunden/tierarztpraxis-steininger.png" },
-  { name: "MTZ Taxi", logo: "/images/kunden/mtz-taxi.png" },
+  { name: "Thomas Hoof Produktgesellschaft", logo: "https://dailyrocket.de/assets/thpg-Ciyzp-O4.svg" },
+  { name: "TBR Safety Solutions", logo: "https://dailyrocket.de/assets/tbr-safety-CciYfUph.png" },
+  { name: "MAX2H", logo: "https://dailyrocket.de/assets/max2h-BLo4s8CG.png" },
+  { name: "Bogner Metall", logo: "https://dailyrocket.de/assets/bogner-metall-BWh-cqdE.png" },
+  { name: "Venitec", logo: "https://dailyrocket.de/assets/venitec-DdER8rOQ.svg" },
+  { name: "Elbmatch", logo: "https://dailyrocket.de/assets/elbmatch-GyO0MV6A.svg" },
+  { name: "Movemates", logo: "https://dailyrocket.de/assets/movemates-BdWqdlmW.jpg" },
+  { name: "Stealth Performance", logo: "https://dailyrocket.de/assets/stealth-performance-CwzKjlfw.png" },
+  { name: "Pure Natural Choice", logo: "https://dailyrocket.de/assets/pure-natural-choice-BKmpemAs.png" },
+  { name: "Zwoo", logo: "https://dailyrocket.de/assets/zwoo-B5En6F0K.png" },
+  { name: "Essbare Landschaften", logo: "https://dailyrocket.de/assets/essbare-landschaften-DdN7Fj_g.svg" },
+  { name: "Hof in der Au", logo: "https://dailyrocket.de/assets/hof-in-der-au-Co4qHlEm.svg" },
+  { name: "Deutsche Entrümpelungskonzepte", logo: "https://dailyrocket.de/assets/deutsche-entruempelungskonzepte-BCZwJBah.webp" },
+  { name: "Rhein Umzüge", logo: "https://dailyrocket.de/assets/rhein-umzuege-u7_JekXO.png" },
+  { name: "Rohrreinigung Priller", logo: "https://dailyrocket.de/assets/rohrreinigung-priller-BoRGRBfu.png" },
+  { name: "Pflegedienst Perle", logo: "https://dailyrocket.de/assets/pflegedienst-perle-B-0TlDTH.png" },
+  { name: "Tierarztpraxis Steininger", logo: "https://dailyrocket.de/assets/tierarztpraxis-steininger-u0Krmy6B.png" },
+  { name: "MTZ Taxi", logo: "https://dailyrocket.de/assets/mtz-taxi-C87ZOo6q.png" },
 ] as const;
 
 export const cta = {
