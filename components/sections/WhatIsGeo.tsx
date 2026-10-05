@@ -1,5 +1,6 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { TextLink } from "@/components/ui/Button";
+import type { Locale } from "@/lib/i18n";
 
 export const geoSignals = [
   { t: "Website", d: "Klare Seitenstruktur, eindeutige Aussagen, schnelle und saubere Auslieferung." },
@@ -12,27 +13,86 @@ export const geoSignals = [
   { t: "Semantische Zusammenhänge", d: "Themen, Begriffe und Leistungen, die sinnvoll miteinander verknüpft sind." },
 ];
 
-const compare = [
-  { k: "Ziel", seo: "Gute Platzierung in der Ergebnisliste", geo: "Nennung und Zitierung in der KI-Antwort" },
-  { k: "Ergebnis", seo: "Zehn Links zur Auswahl", geo: "Eine formulierte Antwort mit wenigen Quellen" },
-  { k: "Messung", seo: "Rankings, Klicks, organischer Traffic", geo: "Nennungen, Zitierungen, Kontext, Share of Voice" },
-  { k: "Gemeinsame Basis", seo: "Technische Qualität, gute Inhalte, Autorität", geo: "Technische Qualität, gute Inhalte, Autorität" },
+/** Englische Fassung von `geoSignals` (gleiche Reihenfolge). */
+export const geoSignalsEn = [
+  { t: "Website", d: "Clear page structure, unambiguous statements, fast and clean delivery." },
+  { t: "Content", d: "Content that answers real questions precisely – backed up and quotable." },
+  { t: "Brand entity", d: "A clear, consistent description of who you are and what you stand for." },
+  { t: "Structured data", d: "Schema.org markup that gives machines facts without room for interpretation." },
+  { t: "External mentions", d: "What industry portals, directories, the press and customers write about you." },
+  { t: "Authority", d: "Demonstrable expertise in clearly defined topics rather than breadth without depth." },
+  { t: "Technical readability", d: "Accessible to AI crawlers: server-side HTML, crawlability, llms.txt." },
+  { t: "Semantic relationships", d: "Topics, terms and services that are meaningfully connected." },
 ];
 
-export function WhatIsGeo() {
+const copy = {
+  de: {
+    signals: geoSignals,
+    eyebrow: "Was ist GEO?",
+    title: "Generative Engine Optimization, ",
+    titleEm: "klar erklärt.",
+    lead: "GEO ist kein Trick und kein neues Buzzword für SEO. Es ist die logische Antwort darauf, dass Menschen ihre Fragen zunehmend an KI-Systeme stellen.",
+    definition:
+      "ist die Optimierung eines Unternehmens dafür, dass KI-Systeme es verstehen und bei passenden Nutzerfragen als relevante Quelle berücksichtigen.",
+    signalsIntro: "Dafür betrachten wir nicht nur Ihre Website, sondern alle Signale, aus denen sich ein Sprachmodell ein Bild von Ihrer Marke macht.",
+    moreHref: "/generative-engine-optimization",
+    more: "Ausführlich: Was ist GEO?",
+    signalsLabel: "Acht Signale, die GEO optimiert",
+    seoGeoA: "SEO sorgt dafür, dass Suchmaschinen Ihre Website finden.",
+    seoGeoEm: "GEO sorgt zusätzlich dafür, dass KI-Systeme Ihre Marke verstehen.",
+    seoGeoText:
+      "Wir spielen beides nicht gegeneinander aus. Viele KI-Systeme stützen sich auf Suchindizes – eine starke SEO-Basis ist deshalb die beste Voraussetzung für GEO.",
+    caption: "Vergleich von SEO und GEO",
+    classicSeo: "Klassisches SEO",
+    compare: [
+      { k: "Ziel", seo: "Gute Platzierung in der Ergebnisliste", geo: "Nennung und Zitierung in der KI-Antwort" },
+      { k: "Ergebnis", seo: "Zehn Links zur Auswahl", geo: "Eine formulierte Antwort mit wenigen Quellen" },
+      { k: "Messung", seo: "Rankings, Klicks, organischer Traffic", geo: "Nennungen, Zitierungen, Kontext, Share of Voice" },
+      { k: "Gemeinsame Basis", seo: "Technische Qualität, gute Inhalte, Autorität", geo: "Technische Qualität, gute Inhalte, Autorität" },
+    ],
+  },
+  en: {
+    signals: geoSignalsEn,
+    eyebrow: "What is GEO?",
+    title: "Generative Engine Optimization, ",
+    titleEm: "clearly explained.",
+    lead: "GEO is neither a trick nor a new buzzword for SEO. It is the logical response to people increasingly asking AI systems their questions.",
+    definition:
+      "is the practice of optimising a company so that AI systems understand it and consider it a relevant source for the right user questions.",
+    signalsIntro: "That is why we look beyond your website at every signal a language model uses to form a picture of your brand.",
+    moreHref: "/en/generative-engine-optimization",
+    more: "In depth: What is GEO?",
+    signalsLabel: "Eight signals that GEO optimises",
+    seoGeoA: "SEO makes sure search engines find your website.",
+    seoGeoEm: "GEO also makes sure AI systems understand your brand.",
+    seoGeoText:
+      "We don't play one off against the other. Many AI systems rely on search indexes – so a strong SEO foundation is the best starting point for GEO.",
+    caption: "Comparison of SEO and GEO",
+    classicSeo: "Traditional SEO",
+    compare: [
+      { k: "Goal", seo: "A high position in the results list", geo: "Being mentioned and cited in the AI answer" },
+      { k: "Result", seo: "Ten links to choose from", geo: "One written answer with a few sources" },
+      { k: "Measurement", seo: "Rankings, clicks, organic traffic", geo: "Mentions, citations, context, share of voice" },
+      { k: "Common ground", seo: "Technical quality, good content, authority", geo: "Technical quality, good content, authority" },
+    ],
+  },
+};
+
+export function WhatIsGeo({ locale = "de" }: { locale?: Locale }) {
+  const t = copy[locale];
   return (
     <section aria-labelledby="was-ist-geo" className="py-24 lg:py-36">
       <div className="container-x">
         <SectionHeader
           index="02"
-          eyebrow="Was ist GEO?"
+          eyebrow={t.eyebrow}
           title={
             <span id="was-ist-geo">
-              Generative Engine Optimization, <span className="em">klar erklärt.</span>
+              {t.title}<span className="em">{t.titleEm}</span>
             </span>
           }
           align="split"
-          lead="GEO ist kein Trick und kein neues Buzzword für SEO. Es ist die logische Antwort darauf, dass Menschen ihre Fragen zunehmend an KI-Systeme stellen."
+          lead={t.lead}
         />
 
         <div className="mt-16 grid gap-12 lg:mt-20 lg:grid-cols-12">
@@ -40,20 +100,19 @@ export function WhatIsGeo() {
             <p className="text-[1.45rem] leading-[1.4] tracking-[-0.015em] sm:text-[1.75rem]">
               <strong className="font-medium">Generative Engine Optimization (GEO)</strong>{" "}
               <span className="text-ink-2">
-                ist die Optimierung eines Unternehmens dafür, dass KI-Systeme es verstehen und bei passenden Nutzerfragen als relevante
-                Quelle berücksichtigen.
+                {t.definition}
               </span>
             </p>
             <p className="mt-6 max-w-md text-[1rem] leading-relaxed text-muted">
-              Dafür betrachten wir nicht nur Ihre Website, sondern alle Signale, aus denen sich ein Sprachmodell ein Bild von Ihrer Marke macht.
+              {t.signalsIntro}
             </p>
-            <TextLink href="/generative-engine-optimization" className="mt-8">
-              Ausführlich: Was ist GEO?
+            <TextLink href={t.moreHref} className="mt-8">
+              {t.more}
             </TextLink>
           </div>
 
-          <ol className="grid border-l border-t border-line sm:grid-cols-2 lg:col-span-7" aria-label="Acht Signale, die GEO optimiert">
-            {geoSignals.map((s, i) => (
+          <ol className="grid border-l border-t border-line sm:grid-cols-2 lg:col-span-7" aria-label={t.signalsLabel}>
+            {t.signals.map((s, i) => (
               <li
                 key={s.t}
                 className="group border-b border-r border-line p-6 transition-colors duration-500 hover:bg-card"
@@ -76,28 +135,27 @@ export function WhatIsGeo() {
             <div className="lg:col-span-5">
               <p className="eyebrow mb-6 text-muted">SEO & GEO</p>
               <p className="text-[1.6rem] font-medium leading-[1.2] tracking-[-0.025em] sm:text-[2.1rem]">
-                SEO sorgt dafür, dass Suchmaschinen Ihre Website finden.{" "}
-                <span className="em text-ink-2">GEO sorgt zusätzlich dafür, dass KI-Systeme Ihre Marke verstehen.</span>
+                {t.seoGeoA}{" "}
+                <span className="em text-ink-2">{t.seoGeoEm}</span>
               </p>
               <p className="mt-6 text-[0.98rem] leading-relaxed text-muted">
-                Wir spielen beides nicht gegeneinander aus. Viele KI-Systeme stützen sich auf Suchindizes – eine starke SEO-Basis ist deshalb
-                die beste Voraussetzung für GEO.
+                {t.seoGeoText}
               </p>
             </div>
             <div className="-mx-6 overflow-x-auto px-6 sm:mx-0 sm:px-0 lg:col-span-7">
               <table className="w-full min-w-[520px] border-collapse text-left text-[0.92rem]">
-                <caption className="sr-only">Vergleich von SEO und GEO</caption>
+                <caption className="sr-only">{t.caption}</caption>
                 <thead>
                   <tr className="border-b border-ink">
                     <th scope="col" className="w-[26%] py-3 pr-4 font-mono text-[0.68rem] font-medium uppercase tracking-[0.12em] text-muted" />
-                    <th scope="col" className="py-3 pr-4 font-medium">Klassisches SEO</th>
+                    <th scope="col" className="py-3 pr-4 font-medium">{t.classicSeo}</th>
                     <th scope="col" className="py-3 font-medium">
                       GEO <span className="ml-1 rounded-[3px] bg-signal px-1 font-mono text-[0.6rem] leading-[1.5] text-white">+</span>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {compare.map((r) => (
+                  {t.compare.map((r) => (
                     <tr key={r.k} className="border-b border-line align-top">
                       <th scope="row" className="py-4 pr-4 text-[0.85rem] font-normal text-muted">
                         {r.k}

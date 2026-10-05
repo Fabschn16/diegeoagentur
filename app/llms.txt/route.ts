@@ -65,6 +65,10 @@ ${categories
 ## Häufige Fragen
 ${mainFaq.map((f) => `### ${f.q}\n${stripLinks(f.a[0])}`).join("\n\n")}
 
+## English
+- [English version of this website](${u("/en")}) for companies across Europe
+- [llms.txt in English](${site.url}/en/llms.txt)
+
 ## Optional
 - [Über uns](${u("/ueber-uns")})
 - [GEO Wissen – Übersicht](${u("/ratgeber")})

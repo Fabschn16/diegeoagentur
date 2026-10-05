@@ -1,4 +1,5 @@
 import { RichText } from "./RichText";
+import type { Locale } from "@/lib/i18n";
 
 export type QA = { q: string; a: string[]; id?: string };
 
@@ -20,6 +21,8 @@ export function QASection({
   lead?: string;
   items: QA[];
   tone?: "paper" | "tint";
+  /** Sprache der Seite; Texte kommen vollständig über die Props (Daten in lib/en bzw. content/en). */
+  locale?: Locale;
 }) {
   return (
     <section id={id} aria-labelledby={`${id}-t`} className={`scroll-mt-24 py-20 lg:py-28 ${tone === "tint" ? "border-t border-line bg-paper-2/50" : "border-t border-line"}`}>

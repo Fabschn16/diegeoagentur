@@ -1,12 +1,13 @@
 import Link from "next/link";
+import { ui, type Locale } from "@/lib/i18n";
 
-export function Breadcrumbs({ items }: { items: { name: string; path: string }[] }) {
+export function Breadcrumbs({ items, locale = "de" }: { items: { name: string; path: string }[]; locale?: Locale }) {
   return (
-    <nav aria-label="Brotkrumen" className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">
+    <nav aria-label={ui[locale].breadcrumbs} className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted">
       <ol className="flex flex-wrap items-center gap-2">
         <li>
-          <Link href="/" className="hover:text-ink">
-            Start
+          <Link href={locale === "en" ? "/en" : "/"} className="hover:text-ink">
+            {ui[locale].home}
           </Link>
         </li>
         {items.map((it, i) => (

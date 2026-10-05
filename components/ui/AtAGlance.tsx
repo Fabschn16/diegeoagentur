@@ -2,7 +2,10 @@
  * „Auf einen Blick“ – kompakte, eindeutige Fakten.
  * Diese Form lässt sich von Menschen scannen und von Sprachmodellen sauber zitieren.
  */
-export function AtAGlance({ title = "Auf einen Blick", rows }: { title?: string; rows: { k: string; v: React.ReactNode }[] }) {
+import { ui, type Locale } from "@/lib/i18n";
+
+export function AtAGlance({ title, rows, locale = "de" }: { title?: string; rows: { k: string; v: React.ReactNode }[]; locale?: Locale }) {
+  title ??= ui[locale].atAGlance;
   return (
     <aside className="rounded-[20px] border border-line bg-card p-6 sm:p-8" data-reveal>
       <p className="eyebrow mb-5 flex items-center gap-2 text-muted">

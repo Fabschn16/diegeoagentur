@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "./Icons";
+import { ui, type Locale } from "@/lib/i18n";
 
 /** Thematisch verwandte Seiten mit beschreibenden Ankertexten – Teil des internen Content-Clusters. */
-export function RelatedLinks({ title = "Verwandte Themen", links }: { title?: string; links: { label: string; href: string; note?: string }[] }) {
+export function RelatedLinks({ title, links, locale = "de" }: { title?: string; links: { label: string; href: string; note?: string }[]; locale?: Locale }) {
+  title ??= ui[locale].related;
   return (
     <section aria-label={title} className="border-t border-line py-16">
       <div className="container-x">

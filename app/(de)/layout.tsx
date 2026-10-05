@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import "../globals.css";
+import { fontVars } from "../fonts";
 import { site } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -8,27 +8,6 @@ import { RevealObserver } from "@/components/ui/RevealObserver";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { graph, organizationSchema, parentOrganizationSchema, personSchemas, websiteSchema } from "@/lib/schema";
-
-const geist = localFont({
-  src: "./fonts/Geist-Variable.woff2",
-  variable: "--font-geist",
-  weight: "100 900",
-  display: "swap",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMono-Variable.woff2",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-  display: "swap",
-});
-const instrument = localFont({
-  src: [
-    { path: "./fonts/instrument-serif-latin-400-normal.woff2", style: "normal", weight: "400" },
-    { path: "./fonts/instrument-serif-latin-400-italic.woff2", style: "italic", weight: "400" },
-  ],
-  variable: "--font-instrument",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -55,7 +34,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${geist.variable} ${geistMono.variable} ${instrument.variable}`}>
+    <html lang="de" className={fontVars}>
       <body>
         {/* Google Consent Mode v2: alles abgelehnt, bis das Cookie-Banner eine Einwilligung meldet */}
         <script

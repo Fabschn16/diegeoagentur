@@ -1,5 +1,8 @@
 import { site, team } from "./site";
 import type { Faq } from "./faq";
+import { localeOf } from "./i18n";
+
+const isEn = (path: string) => localeOf(path) === "en";
 
 /**
  * Schema.org-Graph mit stabilen @id-Referenzen:
@@ -61,14 +64,14 @@ export function organizationSchema() {
       addressCountry: site.address.country,
     },
     location: { "@type": "Place", name: `${site.address.city}, ${site.address.region}, Deutschland` },
-    areaServed: { "@type": "Country", name: "Deutschland" },
+    areaServed: [{ "@type": "Country", name: "Deutschland" }, { "@type": "Place", name: "Europa" }],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       telephone: site.phone,
       email: site.email,
-      areaServed: "DE",
-      availableLanguage: ["de"],
+      areaServed: ["DE", "Europe"],
+      availableLanguage: ["de", "en"],
       hoursAvailable: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -113,7 +116,7 @@ export function websiteSchema() {
     url: `${site.url}/`,
     name: site.name,
     description: "Agentur und Wissensressource für Generative Engine Optimization (GEO) und KI-Suchmaschinenoptimierung.",
-    inLanguage: "de-DE",
+    inLanguage: ["de-DE", "en"],
     publisher: { "@id": ORG_ID },
     about: { "@id": ORG_ID },
   };
@@ -158,9 +161,17 @@ export function serviceSchema(opts: {
     url: abs(opts.path),
     provider: { "@id": ORG_ID },
     brand: { "@id": ORG_ID },
-    areaServed: { "@type": "Country", name: "Deutschland" },
-    availableLanguage: "de",
-    audience: { "@type": "BusinessAudience", audienceType: "Unternehmen, Marketing- und SEO-Verantwortliche" },
+    ...(isEn(opts.path)
+      ? {
+          areaServed: { "@type": "Place", name: "Europe" },
+          availableLanguage: ["en", "de"],
+          audience: { "@type": "BusinessAudience", audienceType: "Companies, marketing and SEO leads" },
+        }
+      : {
+          areaServed: { "@type": "Country", name: "Deutschland" },
+          availableLanguage: "de",
+          audience: { "@type": "BusinessAudience", audienceType: "Unternehmen, Marketing- und SEO-Verantwortliche" },
+        }),
     ...(opts.minPrice
       ? {
           offers: {
@@ -172,7 +183,7 @@ export function serviceSchema(opts: {
               minPrice: opts.minPrice,
               priceCurrency: "EUR",
               valueAddedTaxIncluded: false,
-              ...(opts.monthly ? { unitText: "Monat", referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MON" } } : {}),
+              ...(opts.monthly ? { unitText: isEn(opts.path) ? "month" : "Monat", referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MON" } } : {}),
             },
           },
         }
@@ -197,7 +208,7 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
   return {
     "@type": "BreadcrumbList",
     "@id": `${abs(last)}#breadcrumb`,
-    itemListElement: [{ name: "Start", path: "/" }, ...items].map((it, i) => ({
+    itemListElement: [isEn(last) ? { name: "Home", path: "/en" } : { name: "Start", path: "/" }, ...items].map((it, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: it.name,
@@ -223,12 +234,12 @@ export function webPageSchema(opts: {
     url: abs(opts.path),
     name: opts.title,
     description: opts.description,
-    inLanguage: "de-DE",
+    inLanguage: isEn(opts.path) ? "en" : "de-DE",
     isPartOf: { "@id": WEBSITE_ID },
     publisher: { "@id": ORG_ID },
     about: opts.about ? opts.about.map((t) => ({ "@type": "Thing", name: t })) : { "@id": ORG_ID },
     ...(opts.mainEntity ? { mainEntity: { "@id": opts.mainEntity } } : {}),
-    ...(opts.breadcrumb !== false && opts.path !== "/" ? { breadcrumb: { "@id": `${abs(opts.path)}#breadcrumb` } } : {}),
+    ...(opts.breadcrumb !== false && opts.path !== "/" && opts.path !== "/en" ? { breadcrumb: { "@id": `${abs(opts.path)}#breadcrumb` } } : {}),
   };
 }
 
