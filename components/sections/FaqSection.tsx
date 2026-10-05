@@ -3,6 +3,30 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { faqSchema, graph } from "@/lib/schema";
 import type { Faq } from "@/lib/faq";
 import { TextLink } from "@/components/ui/Button";
+import type { Locale } from "@/lib/i18n";
+
+const copy = {
+  de: {
+    title: (
+      <>
+        Häufige Fragen zu <span className="em">GEO.</span>
+      </>
+    ),
+    lead: "Kurze, klare Antworten – ohne Fachjargon. Ihre Frage ist nicht dabei? Sprechen Sie uns direkt an.",
+    ask: "Frage stellen",
+    contactHref: "/kontakt",
+  },
+  en: {
+    title: (
+      <>
+        Frequently asked questions about <span className="em">GEO.</span>
+      </>
+    ),
+    lead: "Short, clear answers without the jargon. Your question isn't here? Get in touch with us directly.",
+    ask: "Ask a question",
+    contactHref: "/en/contact",
+  },
+};
 
 export function FaqSection({
   items,
@@ -11,6 +35,7 @@ export function FaqSection({
   lead,
   withSchema = true,
   path,
+  locale = "de",
 }: {
   items: Faq[];
   index?: string;
@@ -19,7 +44,9 @@ export function FaqSection({
   withSchema?: boolean;
   /** URL der Seite – verknüpft das FAQPage-Schema mit der WebPage */
   path?: string;
+  locale?: Locale;
 }) {
+  const t = copy[locale];
   return (
     <section aria-labelledby="faq" className="border-t border-line py-24 lg:py-36">
       {withSchema && <JsonLd data={graph(faqSchema(items, path))} />}
@@ -32,22 +59,18 @@ export function FaqSection({
               FAQ
             </p>
             <h2 id="faq" className="text-h2 font-medium text-balance">
-              {title ?? (
-                <>
-                  Häufige Fragen zu <span className="em">GEO.</span>
-                </>
-              )}
+              {title ?? t.title}
             </h2>
             <p className="mt-6 text-[1rem] leading-relaxed text-muted">
-              {lead ?? "Kurze, klare Antworten – ohne Fachjargon. Ihre Frage ist nicht dabei? Sprechen Sie uns direkt an."}
+              {lead ?? t.lead}
             </p>
-            <TextLink href="/kontakt" className="mt-6">
-              Frage stellen
+            <TextLink href={t.contactHref} className="mt-6">
+              {t.ask}
             </TextLink>
           </div>
         </div>
         <div className="lg:col-span-8">
-          <FaqList items={items} />
+          <FaqList items={items} locale={locale} />
         </div>
       </div>
     </section>

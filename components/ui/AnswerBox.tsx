@@ -1,5 +1,8 @@
 /** Die Kurzantwort – ein eigenständig zitierfähiger Absatz. */
-export function AnswerBox({ label = "Kurz erklärt", children }: { label?: string; children: React.ReactNode }) {
+import { ui, type Locale } from "@/lib/i18n";
+
+export function AnswerBox({ label, children, locale = "de" }: { label?: string; children: React.ReactNode; locale?: Locale }) {
+  label ??= ui[locale].shortAnswer;
   return (
     <div className="relative rounded-[20px] border border-line bg-card p-6 sm:p-8" data-reveal>
       <p className="eyebrow mb-4 flex items-center gap-2 text-muted">

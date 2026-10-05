@@ -10,16 +10,45 @@ import { ArrowRight } from "@/components/ui/Icons";
 import { QASection } from "@/components/ui/QASection";
 import { RelatedLinks } from "@/components/ui/RelatedLinks";
 import { abs, breadcrumbSchema, faqSchema, graph, serviceSchema, webPageSchema } from "@/lib/schema";
-import { platformServices } from "@/lib/services";
+import { l10n } from "@/lib/l10n";
+import type { Locale } from "@/lib/i18n";
 import type { PlatformPageData } from "@/lib/platforms";
 
-export function PlatformPage({ data }: { data: PlatformPageData }) {
-  const path = `/${data.slug}`;
+const copy = {
+  de: {
+    services: { name: "Leistungen", path: "/leistungen" },
+    source: "Quelle:",
+    leversEyebrow: "Worauf wir optimieren",
+    leversTitle: "Sechs Hebel für mehr Sichtbarkeit in",
+    explained: "erklärt",
+    inDetail: "im Detail.",
+    qaLead: "Jeder Abschnitt beginnt mit der kurzen Antwort, danach folgen die Details.",
+    faqTitle: "Fragen zu",
+    related: "Weiterführend",
+    others: "Weitere Plattformen",
+  },
+  en: {
+    services: { name: "Services", path: "/en/services" },
+    source: "Source:",
+    leversEyebrow: "What we optimise",
+    leversTitle: "Six levers for more visibility in",
+    explained: "explained",
+    inDetail: "in detail.",
+    qaLead: "Each section starts with the short answer, followed by the details.",
+    faqTitle: "Questions about",
+    related: "Further reading",
+    others: "Other platforms",
+  },
+} as const;
+
+export function PlatformPage({ data, locale = "de" }: { data: PlatformPageData; locale?: Locale }) {
+  const t = copy[locale];
+  const path = locale === "en" ? `/en/${data.slug}` : `/${data.slug}`;
   const crumbs = [
-    { name: "Leistungen", path: "/leistungen" },
+    t.services,
     { name: data.name, path },
   ];
-  const others = platformServices.filter((p) => p.href !== path);
+  const others = l10n(locale).platformServices.filter((p) => p.href !== path);
 
   return (
     <>
@@ -40,13 +69,14 @@ export function PlatformPage({ data }: { data: PlatformPageData }) {
           </>
         }
         lead={data.lead}
-        aside={<AtAGlance rows={data.glance} />}
+        aside={<AtAGlance rows={data.glance} locale={locale} />}
+        locale={locale}
       />
 
       <section className="py-20 lg:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <AnswerBox>{data.answer}</AnswerBox>
+            <AnswerBox locale={locale}>{data.answer}</AnswerBox>
           </div>
           <div className="lg:col-span-6 lg:col-start-7" data-reveal>
             <h2 className="text-h2 font-medium text-balance">
@@ -61,7 +91,7 @@ export function PlatformPage({ data }: { data: PlatformPageData }) {
               <ul className="mt-8 space-y-1 border-t border-line pt-5 text-[0.8rem] text-muted">
                 {data.sources.map((s) => (
                   <li key={s.href}>
-                    Quelle:{" "}
+                    {t.source}{" "}
                     <a href={s.href} target="_blank" rel="noopener nofollow" className="underline decoration-line-2 underline-offset-2 hover:text-ink">
                       {s.label}
                     </a>
@@ -76,9 +106,9 @@ export function PlatformPage({ data }: { data: PlatformPageData }) {
       <section aria-labelledby="hebel" className="border-t border-line bg-paper-2/50 py-20 lg:py-28">
         <div className="container-x">
           <div className="max-w-3xl" data-reveal>
-            <p className="eyebrow mb-6 text-muted">Worauf wir optimieren</p>
+            <p className="eyebrow mb-6 text-muted">{t.leversEyebrow}</p>
             <h2 id="hebel" className="text-h2 font-medium text-balance">
-              Sechs Hebel für mehr Sichtbarkeit in <span className="em">{data.name.replace(/ SEO$/, "")}.</span>
+              {`${t.leversTitle} `}<span className="em">{data.name.replace(/ SEO$/, "")}.</span>
             </h2>
           </div>
           <ol className="mt-14 grid gap-px overflow-hidden rounded-[24px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
@@ -96,26 +126,37 @@ export function PlatformPage({ data }: { data: PlatformPageData }) {
       {data.qa && (
         <QASection
           id="wissen"
-          eyebrow={`${data.name} erklärt`}
+          eyebrow={`${data.name} ${t.explained}`}
           title={
             <>
-              {data.qaTitle?.[0] ?? data.name} <span className="em">{data.qaTitle?.[1] ?? "im Detail."}</span>
+              {data.qaTitle?.[0] ?? data.name} <span className="em">{data.qaTitle?.[1] ?? t.inDetail}</span>
             </>
           }
-          lead="Jeder Abschnitt beginnt mit der kurzen Antwort, danach folgen die Details."
+          lead={t.qaLead}
           items={data.qa}
+          locale={locale}
         />
       )}
 
-      <Process index="" />
-      <AuditSection />
-      <FaqSection items={data.faq} withSchema={!data.qa} path={path} title={<>Fragen zu <span className="em">{data.name}.</span></>} />
+      <Process index="" locale={locale} />
+      <AuditSection locale={locale} />
+      <FaqSection
+        items={data.faq}
+        withSchema={!data.qa}
+        path={path}
+        title={
+          <>
+            {`${t.faqTitle} `}<span className="em">{data.name}.</span>
+          </>
+        }
+        locale={locale}
+      />
 
-      {data.related && <RelatedLinks title="Weiterführend" links={data.related} />}
+      {data.related && <RelatedLinks title={t.related} links={data.related} locale={locale} />}
 
       <section className="border-t border-line py-16">
         <div className="container-x">
-          <p className="eyebrow mb-6 text-muted">Weitere Plattformen</p>
+          <p className="eyebrow mb-6 text-muted">{t.others}</p>
           <ul className="grid gap-3 sm:grid-cols-3">
             {others.map((o) => (
               <li key={o.href}>

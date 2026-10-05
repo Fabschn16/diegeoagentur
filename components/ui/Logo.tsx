@@ -1,14 +1,15 @@
 import Link from "next/link";
+import { ui, type Locale } from "@/lib/i18n";
 
 /**
  * Wortmarke: „Die GEO Agentur“ mit der Quellenmarke [1] –
  * das Zeichen, mit dem KI-Antworten ihre Quellen belegen.
  */
-export function Logo({ className = "", tone = "ink" }: { className?: string; tone?: "ink" | "paper" }) {
+export function Logo({ className = "", tone = "ink", locale = "de" }: { className?: string; tone?: "ink" | "paper"; locale?: Locale }) {
   return (
     <Link
-      href="/"
-      aria-label="Die GEO Agentur – Startseite"
+      href={locale === "en" ? "/en" : "/"}
+      aria-label={ui[locale].logoLabel}
       className={`group inline-flex items-start gap-[0.2em] text-[1.06rem] leading-none tracking-[-0.02em] ${
         tone === "paper" ? "text-paper" : "text-ink"
       } ${className}`}

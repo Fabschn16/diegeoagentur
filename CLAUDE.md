@@ -22,6 +22,8 @@ Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4. Statischer Expor
 - `lib/schema.ts` – Schema.org-Graph mit festen @ids
 - `app/llms.txt/route.ts`, `app/sitemap.ts`, `app/robots.ts`, `public/_redirects`, `public/_headers`
 - Formulare: Netlify Forms (Formularname „anfrage“)
+- Zweisprachig: deutsche Seiten in `app/(de)/` (URLs ohne Präfix), englische in `app/en/` (eigenes Root-Layout, `lang="en"`). URL-Paare DE↔EN in `lib/i18n.ts` (`routes`) – steuern Sprachumschalter, hreflang und Sitemap. Neue Seite mit Gegenstück: dort eintragen.
+- Sprachabhängige Daten über `l10n(locale)` (`lib/l10n.ts`); englische Daten in `lib/en/` und `content/en/`. Komponenten nehmen `locale` (Standard „de“). Preise in `lib/site.ts` und `lib/en/site.ts` gemeinsam ändern.
 
 ## Regeln für Inhalte
 - Keine erfundenen Kunden, Bewertungen, Zahlen, Studien oder Garantien („garantiert Platz 1 bei ChatGPT“ o. ä.)
