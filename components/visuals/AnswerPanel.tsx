@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { cta } from "@/lib/site";
 
 export const scenes = [
   {
@@ -112,15 +114,18 @@ export function AnswerPanel() {
                 {s.intro}
               </p>
               <ul className="mt-3 space-y-2">
-                <li
-                  className="answer-line flex items-center justify-between gap-3 rounded-xl border border-ink bg-ink px-3.5 py-2.5 text-paper"
-                  style={{ animationDelay: "260ms" }}
-                >
-                  <span className="text-[0.9rem] font-medium">Ihre Marke</span>
-                  <span className="flex items-center gap-2">
-                    <span className="hidden font-mono text-[0.62rem] uppercase tracking-[0.1em] text-fog sm:inline">zitiert</span>
-                    <span className="rounded-[3px] bg-signal px-1.5 font-mono text-[0.65rem] leading-[1.5] text-white">1</span>
-                  </span>
+                <li className="answer-line" style={{ animationDelay: "260ms" }}>
+                  <Link
+                    href={cta.primary.href}
+                    aria-label={`Ihre Marke – ${cta.primary.label}`}
+                    className="flex items-center justify-between gap-3 rounded-xl border border-ink bg-ink px-3.5 py-2.5 text-paper transition-colors hover:bg-ink-2"
+                  >
+                    <span className="text-[0.9rem] font-medium">Ihre Marke</span>
+                    <span className="flex items-center gap-2">
+                      <span className="hidden font-mono text-[0.62rem] uppercase tracking-[0.1em] text-fog sm:inline">zitiert</span>
+                      <span className="rounded-[3px] bg-signal px-1.5 font-mono text-[0.65rem] leading-[1.5] text-white">1</span>
+                    </span>
+                  </Link>
                 </li>
                 {["Anbieter B", "Anbieter C"].map((name, n) => (
                   <li
