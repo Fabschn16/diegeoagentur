@@ -83,19 +83,19 @@ export const provenStats = [
 
 /**
  * Kunden von Daily Rocket, die laut Fabian (Okt. 2026) auch im Bereich KI/GEO betreut werden.
- * Logos werden direkt von dailyrocket.de geladen. Die Dateinamen enthalten Build-Hashes:
+ * Logos liegen unter public/images/kunden/ oder werden (noch) direkt von dailyrocket.de geladen. Die Dateinamen enthalten Build-Hashes:
  * nach einem Relaunch von dailyrocket.de die Pfade prüfen oder die Logos lokal unter public/ ablegen.
  */
 export const clients = [
-  { name: "Thomas Hoof Produktgesellschaft", logo: "https://dailyrocket.de/assets/thpg-Ciyzp-O4.svg" },
-  { name: "TBR Safety Solutions", logo: "https://dailyrocket.de/assets/tbr-safety-CciYfUph.png" },
-  { name: "MAX2H", logo: "https://dailyrocket.de/assets/max2h-BLo4s8CG.png" },
-  { name: "Bogner Metall", logo: "https://dailyrocket.de/assets/bogner-metall-BWh-cqdE.png" },
+  { name: "Thomas Hoof Produktgesellschaft", logo: "/images/kunden/thpg.svg" },
+  { name: "TBR Safety Solutions", logo: "/images/kunden/tbr-safety.png" },
+  { name: "MAX2H", logo: "/images/kunden/max2h.png" },
+  { name: "Bogner Metall", logo: "/images/kunden/bogner-metall.png" },
   { name: "Venitec", logo: "https://dailyrocket.de/assets/venitec-DdER8rOQ.svg" },
   { name: "Elbmatch", logo: "https://dailyrocket.de/assets/elbmatch-GyO0MV6A.svg" },
   { name: "Movemates", logo: "https://dailyrocket.de/assets/movemates-BdWqdlmW.jpg" },
   { name: "Stealth Performance", logo: "https://dailyrocket.de/assets/stealth-performance-CwzKjlfw.png" },
-  { name: "Pure Natural Choice", logo: "https://dailyrocket.de/assets/pure-natural-choice-BKmpemAs.png" },
+  { name: "Pure Natural Choice", logo: "/images/kunden/pure-natural-choice.png" },
   { name: "Zwoo", logo: "https://dailyrocket.de/assets/zwoo-B5En6F0K.png" },
   { name: "Essbare Landschaften", logo: "https://dailyrocket.de/assets/essbare-landschaften-DdN7Fj_g.svg" },
   { name: "Hof in der Au", logo: "https://dailyrocket.de/assets/hof-in-der-au-Co4qHlEm.svg" },
