@@ -82,29 +82,16 @@ export const provenStats = [
 ] as const;
 
 /**
- * Kunden von Daily Rocket, die laut Fabian (Okt. 2026) auch im Bereich KI/GEO betreut werden.
- * Logos liegen unter public/images/kunden/ oder werden (noch) direkt von dailyrocket.de geladen. Die Dateinamen enthalten Build-Hashes:
- * nach einem Relaunch von dailyrocket.de die Pfade prüfen oder die Logos lokal unter public/ ablegen.
+ * Kunden von Daily Rocket bzw. der GEO Agentur, die laut Fabian (Okt. 2026) auch im Bereich KI/GEO betreut werden.
+ * Logos liegen unter public/images/kunden/.
  */
 export const clients = [
   { name: "Thomas Hoof Produktgesellschaft", logo: "/images/kunden/thpg.svg" },
   { name: "TBR Safety Solutions", logo: "/images/kunden/tbr-safety.png" },
   { name: "MAX2H", logo: "/images/kunden/max2h.png" },
+  { name: "Hotel Rivers Passau", logo: "/images/kunden/hotel-rivers.svg" },
   { name: "Bogner Metall", logo: "/images/kunden/bogner-metall.png" },
-  { name: "Venitec", logo: "https://dailyrocket.de/assets/venitec-DdER8rOQ.svg" },
-  { name: "Elbmatch", logo: "https://dailyrocket.de/assets/elbmatch-GyO0MV6A.svg" },
-  { name: "Movemates", logo: "https://dailyrocket.de/assets/movemates-BdWqdlmW.jpg" },
-  { name: "Stealth Performance", logo: "https://dailyrocket.de/assets/stealth-performance-CwzKjlfw.png" },
   { name: "Pure Natural Choice", logo: "/images/kunden/pure-natural-choice.png" },
-  { name: "Zwoo", logo: "https://dailyrocket.de/assets/zwoo-B5En6F0K.png" },
-  { name: "Essbare Landschaften", logo: "https://dailyrocket.de/assets/essbare-landschaften-DdN7Fj_g.svg" },
-  { name: "Hof in der Au", logo: "https://dailyrocket.de/assets/hof-in-der-au-Co4qHlEm.svg" },
-  { name: "Deutsche Entrümpelungskonzepte", logo: "https://dailyrocket.de/assets/deutsche-entruempelungskonzepte-BCZwJBah.webp" },
-  { name: "Rhein Umzüge", logo: "https://dailyrocket.de/assets/rhein-umzuege-u7_JekXO.png" },
-  { name: "Rohrreinigung Priller", logo: "https://dailyrocket.de/assets/rohrreinigung-priller-BoRGRBfu.png" },
-  { name: "Pflegedienst Perle", logo: "https://dailyrocket.de/assets/pflegedienst-perle-B-0TlDTH.png" },
-  { name: "Tierarztpraxis Steininger", logo: "https://dailyrocket.de/assets/tierarztpraxis-steininger-u0Krmy6B.png" },
-  { name: "MTZ Taxi", logo: "https://dailyrocket.de/assets/mtz-taxi-C87ZOo6q.png" },
 ] as const;
 
 export const cta = {
