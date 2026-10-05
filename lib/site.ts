@@ -81,6 +81,31 @@ export const provenStats = [
   { value: "20+ Mio. €", label: "Ad Spend jährlich in Verantwortung" },
 ] as const;
 
+/**
+ * Kunden von Daily Rocket, die laut Fabian (Okt. 2026) auch im Bereich KI/GEO betreut werden.
+ * Logos von dailyrocket.de, abgelegt unter public/images/kunden/.
+ */
+export const clients = [
+  { name: "Thomas Hoof Produktgesellschaft", logo: "/images/kunden/thpg.svg" },
+  { name: "TBR Safety Solutions", logo: "/images/kunden/tbr-safety.png" },
+  { name: "MAX2H", logo: "/images/kunden/max2h.png" },
+  { name: "Bogner Metall", logo: "/images/kunden/bogner-metall.png" },
+  { name: "Venitec", logo: "/images/kunden/venitec.svg" },
+  { name: "Elbmatch", logo: "/images/kunden/elbmatch.svg" },
+  { name: "Movemates", logo: "/images/kunden/movemates.jpg" },
+  { name: "Stealth Performance", logo: "/images/kunden/stealth-performance.png" },
+  { name: "Pure Natural Choice", logo: "/images/kunden/pure-natural-choice.png" },
+  { name: "Zwoo", logo: "/images/kunden/zwoo.png" },
+  { name: "Essbare Landschaften", logo: "/images/kunden/essbare-landschaften.svg" },
+  { name: "Hof in der Au", logo: "/images/kunden/hof-in-der-au.svg" },
+  { name: "Deutsche Entrümpelungskonzepte", logo: "/images/kunden/deutsche-entruempelungskonzepte.webp" },
+  { name: "Rhein Umzüge", logo: "/images/kunden/rhein-umzuege.png" },
+  { name: "Rohrreinigung Priller", logo: "/images/kunden/rohrreinigung-priller.png" },
+  { name: "Pflegedienst Perle", logo: "/images/kunden/pflegedienst-perle.png" },
+  { name: "Tierarztpraxis Steininger", logo: "/images/kunden/tierarztpraxis-steininger.png" },
+  { name: "MTZ Taxi", logo: "/images/kunden/mtz-taxi.png" },
+] as const;
+
 export const cta = {
   primary: { label: "KI-Sichtbarkeit prüfen lassen", href: "/geo-audit#check" },
   primaryShort: { label: "KI-Sichtbarkeit prüfen", href: "/geo-audit#check" },
