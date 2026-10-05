@@ -1,9 +1,31 @@
 import { AnswerPanel } from "@/components/visuals/AnswerPanel";
 import { Button } from "@/components/ui/Button";
 import { TeamAvatars } from "@/components/ui/TeamAvatars";
-import { bookingHref, cta } from "@/lib/site";
+import { l10n } from "@/lib/l10n";
+import type { Locale } from "@/lib/i18n";
 
-export function Hero() {
+const copy = {
+  de: {
+    eyebrow: "GEO Agentur für Generative Engine Optimization",
+    founders: "Gründer · Ihre persönlichen Ansprechpartner",
+    leadA: "Immer mehr Menschen fragen ChatGPT, Gemini oder Perplexity nach Empfehlungen.",
+    leadStrong: "Wir optimieren Ihre Website, damit KI Ihr Unternehmen findet, versteht und bei passenden Fragen nennt",
+    leadB: "– auch in Google AI Overviews.",
+    note: "Unverbindlich · 30 Minuten · direkt mit den Gründern",
+  },
+  en: {
+    eyebrow: "GEO agency for Generative Engine Optimization",
+    founders: "Founders · your personal contacts",
+    leadA: "More and more people ask ChatGPT, Gemini or Perplexity for recommendations.",
+    leadStrong: "We optimise your website so that AI finds your company, understands it and mentions it for the right questions",
+    leadB: "– in Google AI Overviews, too.",
+    note: "No obligation · 30 minutes · directly with the founders",
+  },
+};
+
+export function Hero({ locale = "de" }: { locale?: Locale }) {
+  const t = copy[locale];
+  const { cta, bookingHref } = l10n(locale);
   return (
     <section className="relative overflow-hidden">
       {/* feines Raster als Hintergrund */}
@@ -16,18 +38,26 @@ export function Hero() {
           <h1>
             <span className="eyebrow mb-8 flex items-center gap-3 text-muted" data-reveal>
               <span aria-hidden="true" className="rounded-[3px] bg-signal px-1.5 leading-[1.5] text-white before:content-['1']" />
-              GEO Agentur für Generative Engine Optimization
+              {t.eyebrow}
             </span>{" "}
             <span className="block text-display font-medium text-balance" data-reveal style={{ ["--reveal-delay" as string]: "60ms" }}>
-              Werden Sie in <span className="whitespace-nowrap">ChatGPT & Co.</span> <span className="em">gefunden.</span>
+              {locale === "en" ? (
+                <>
+                  Get found in <span className="em whitespace-nowrap">ChatGPT & Co.</span>
+                </>
+              ) : (
+                <>
+                  Werden Sie in <span className="whitespace-nowrap">ChatGPT & Co.</span> <span className="em">gefunden.</span>
+                </>
+              )}
             </span>
           </h1>
           <div className="mt-8 flex items-center gap-4" data-reveal style={{ ["--reveal-delay" as string]: "100ms" }}>
-            <TeamAvatars size={64} />
+            <TeamAvatars size={64} locale={locale} />
             <p className="text-[0.95rem] leading-snug text-muted">
               <span className="font-medium text-ink">Fabian Schnabel & Jan Hugo</span>
               <br />
-              Gründer · Ihre persönlichen Ansprechpartner
+              {t.founders}
             </p>
           </div>
           <p
@@ -35,11 +65,11 @@ export function Hero() {
             data-reveal
             style={{ ["--reveal-delay" as string]: "140ms" }}
           >
-            Immer mehr Menschen fragen ChatGPT, Gemini oder Perplexity nach Empfehlungen.{" "}
+            {t.leadA}{" "}
             <strong className="font-medium text-ink">
-              Wir optimieren Ihre Website, damit KI Ihr Unternehmen findet, versteht und bei passenden Fragen nennt
+              {t.leadStrong}
             </strong>{" "}
-            – auch in Google AI Overviews.
+            {t.leadB}
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" data-reveal style={{ ["--reveal-delay" as string]: "220ms" }}>
             <Button href={cta.primary.href} size="lg" arrow>
@@ -50,12 +80,12 @@ export function Hero() {
             </Button>
           </div>
           <p className="mt-5 text-[0.88rem] leading-snug text-muted" data-reveal style={{ ["--reveal-delay" as string]: "280ms" }}>
-            Unverbindlich · 30 Minuten · direkt mit den Gründern
+            {t.note}
           </p>
         </div>
 
         <div className="lg:col-span-5 lg:pt-4" data-reveal style={{ ["--reveal-delay" as string]: "200ms" }}>
-          <AnswerPanel />
+          <AnswerPanel locale={locale} />
         </div>
       </div>
     </section>

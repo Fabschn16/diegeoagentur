@@ -1,23 +1,61 @@
 import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ArrowRight, ArrowUpRight } from "@/components/ui/Icons";
-import { coreServices, platformServices } from "@/lib/services";
+import { l10n } from "@/lib/l10n";
+import type { Locale } from "@/lib/i18n";
 
-export function Services({ index = "03", showHeader = true }: { index?: string; showHeader?: boolean }) {
+const copy = {
+  de: {
+    eyebrow: "Leistungen",
+    title: (
+      <>
+        Alles, was eine Marke für <span className="em">KI-Sichtbarkeit</span> braucht.
+      </>
+    ),
+    lead: "Sechs Disziplinen, ein Ziel: dass KI-Systeme Ihr Unternehmen korrekt verstehen und bei den richtigen Fragen berücksichtigen.",
+    byPlatform: "Nach Plattform",
+    platformText: (
+      <>
+        Jedes System bildet Antworten etwas anders. <span className="em text-fog">Wir kennen die Unterschiede.</span>
+      </>
+    ),
+    allServices: "Alle Leistungen",
+    servicesHref: "/leistungen",
+    agencyHref: "/geo-agentur",
+  },
+  en: {
+    eyebrow: "Services",
+    title: (
+      <>
+        Everything a brand needs for <span className="em">AI visibility.</span>
+      </>
+    ),
+    lead: "Six disciplines, one goal: AI systems that understand your company correctly and consider it for the right questions.",
+    byPlatform: "By platform",
+    platformText: (
+      <>
+        Every system builds its answers a little differently. <span className="em text-fog">We know the differences.</span>
+      </>
+    ),
+    allServices: "All services",
+    servicesHref: "/en/services",
+    agencyHref: "/en/geo-agency",
+  },
+};
+
+export function Services({ index = "03", showHeader = true, locale = "de" }: { index?: string; showHeader?: boolean; locale?: Locale }) {
+  const t = copy[locale];
+  const { coreServices, platformServices, ui } = l10n(locale);
   return (
     <section aria-labelledby="leistungen" className="border-t border-line bg-paper-2/50 py-24 lg:py-36">
       <div className="container-x">
         {showHeader && (
           <SectionHeader
             index={index}
-            eyebrow="Leistungen"
-            title={
-              <span id="leistungen">
-                Alles, was eine Marke für <span className="em">KI-Sichtbarkeit</span> braucht.
-              </span>
-            }
+            eyebrow={t.eyebrow}
+            title={<span id="leistungen">{t.title}</span>}
             align="split"
-            lead="Sechs Disziplinen, ein Ziel: dass KI-Systeme Ihr Unternehmen korrekt verstehen und bei den richtigen Fragen berücksichtigen."
+            lead={t.lead}
           />
         )}
 
@@ -50,15 +88,15 @@ export function Services({ index = "03", showHeader = true }: { index?: string; 
 
         <div className="mt-6 grid gap-6 lg:grid-cols-12 lg:items-stretch">
           <div className="rounded-[24px] bg-ink p-7 text-paper sm:p-9 lg:col-span-4" data-reveal>
-            <p className="eyebrow text-fog">Nach Plattform</p>
+            <p className="eyebrow text-fog">{t.byPlatform}</p>
             <p className="mt-6 text-[1.5rem] font-medium leading-tight tracking-[-0.02em]">
-              Jedes System bildet Antworten etwas anders. <span className="em text-fog">Wir kennen die Unterschiede.</span>
+              {t.platformText}
             </p>
-            <Link href="/leistungen" className="mt-8 inline-flex items-center gap-2 text-[0.9rem] font-medium">
-              Alle Leistungen <ArrowRight className="size-3.5" />
+            <Link href={t.servicesHref} className="mt-8 inline-flex items-center gap-2 text-[0.9rem] font-medium">
+              {t.allServices} <ArrowRight className="size-3.5" />
             </Link>
-            <Link href="/geo-agentur" className="mt-3 flex items-center gap-2 text-[0.9rem] text-fog hover:text-paper">
-              Was macht eine GEO Agentur? <ArrowRight className="size-3.5" />
+            <Link href={t.agencyHref} className="mt-3 flex items-center gap-2 text-[0.9rem] text-fog hover:text-paper">
+              {ui.whatIsAgency} <ArrowRight className="size-3.5" />
             </Link>
           </div>
           <ul className="grid gap-px overflow-hidden rounded-[24px] border border-line bg-line sm:grid-cols-2 lg:col-span-8">

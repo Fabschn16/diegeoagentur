@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { Locale } from "@/lib/i18n";
 
 export const scenes = [
   {
@@ -29,9 +30,66 @@ export const scenes = [
   },
 ] as const;
 
+/** Englische Beispielszenen – gleiche Aussage, generische Beispiel-Domains, keine echten Kunden. */
+export const scenesEn = [
+  {
+    engine: "ChatGPT",
+    prompt: "Which running shoes are good for beginners?",
+    intro: "These brands are often recommended for beginners:",
+    sources: ["your-brand.com", "running-magazine.com", "product-tests.com"],
+  },
+  {
+    engine: "Gemini",
+    prompt: "Which company in Vienna does good bathroom renovations?",
+    intro: "Experienced firms with good reviews include, for example:",
+    sources: ["your-brand.com", "review-portal.com", "trades-directory.com"],
+  },
+  {
+    engine: "Perplexity",
+    prompt: "Which tax adviser is good for freelancers?",
+    intro: "Advisers specialising in freelancers and founders include:",
+    sources: ["your-brand.com", "business-directory.com", "founders-portal.com"],
+  },
+  {
+    engine: "AI Overviews",
+    prompt: "How much does a heat pump cost in an older house?",
+    intro: "Costs depend on the building and the output required. Detailed information is available from:",
+    sources: ["your-brand.com", "energy-portal.com", "consumer-advice.com"],
+  },
+] as const;
+
+const copy = {
+  de: {
+    scenes,
+    label: "Schematische Darstellung: Eine KI beantwortet eine Frage und nennt wenige Anbieter mit Quellenangabe.",
+    results: "Suchergebnisse",
+    engines: "KI-Systeme",
+    schema: "Schema",
+    brand: "Ihre Marke",
+    cited: "zitiert",
+    others: ["Anbieter B", "Anbieter C"],
+    sources: "Quellen",
+    caption: "Schematische Darstellung · Beispielfragen",
+  },
+  en: {
+    scenes: scenesEn,
+    label: "Schematic illustration: an AI answers a question and names a few providers, citing its sources.",
+    results: "Search results",
+    engines: "AI systems",
+    schema: "Schematic",
+    brand: "Your brand",
+    cited: "cited",
+    others: ["Provider B", "Provider C"],
+    sources: "Sources",
+    caption: "Schematic illustration · example questions",
+  },
+};
+
 const DURATION = 5200;
 
-export function AnswerPanel() {
+export function AnswerPanel({ locale = "de" }: { locale?: Locale }) {
+  const t = copy[locale];
+  const scenes = t.scenes;
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
@@ -55,14 +113,14 @@ export function AnswerPanel() {
       className="relative mx-auto w-full max-w-[560px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      aria-label="Schematische Darstellung: Eine KI beantwortet eine Frage und nennt wenige Anbieter mit Quellenangabe."
+      aria-label={t.label}
     >
       {/* Hintergrund: die klassische Linkliste */}
       <div
         aria-hidden="true"
         className="absolute -left-6 -top-12 hidden w-[78%] rotate-[-3deg] rounded-2xl border border-line bg-card/70 p-5 opacity-70 sm:block lg:-left-14"
       >
-        <p className="eyebrow mb-3 text-muted">Suchergebnisse</p>
+        <p className="eyebrow mb-3 text-muted">{t.results}</p>
         <ol className="space-y-2.5">
           {Array.from({ length: 7 }).map((_, n) => (
             <li key={n} className="flex items-center gap-3">
@@ -76,7 +134,7 @@ export function AnswerPanel() {
       <div className="relative mt-10 overflow-hidden rounded-[20px] border border-line bg-card shadow-[0_40px_90px_-40px_rgba(16,17,15,0.45),0_2px_6px_-2px_rgba(16,17,15,0.08)] sm:ml-10">
         {/* Tabs */}
         <div className="flex items-center justify-between gap-3 border-b border-line px-4 py-3">
-          <div role="tablist" aria-label="KI-Systeme" className="flex gap-1 overflow-x-auto [scrollbar-width:none]">
+          <div role="tablist" aria-label={t.engines} className="flex gap-1 overflow-x-auto [scrollbar-width:none]">
             {scenes.map((sc, n) => (
               <button
                 key={sc.engine}
@@ -91,7 +149,7 @@ export function AnswerPanel() {
               </button>
             ))}
           </div>
-          <span className="hidden shrink-0 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-muted sm:block">Schema</span>
+          <span className="hidden shrink-0 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-muted sm:block">{t.schema}</span>
         </div>
 
         <div key={i} data-ap-body className="px-5 pb-5 pt-5 sm:px-6">
@@ -116,13 +174,13 @@ export function AnswerPanel() {
                   className="answer-line flex items-center justify-between gap-3 rounded-xl border border-ink bg-ink px-3.5 py-2.5 text-paper"
                   style={{ animationDelay: "260ms" }}
                 >
-                  <span className="text-[0.9rem] font-medium">Ihre Marke</span>
+                  <span className="text-[0.9rem] font-medium">{t.brand}</span>
                   <span className="flex items-center gap-2">
-                    <span className="hidden font-mono text-[0.62rem] uppercase tracking-[0.1em] text-fog sm:inline">zitiert</span>
+                    <span className="hidden font-mono text-[0.62rem] uppercase tracking-[0.1em] text-fog sm:inline">{t.cited}</span>
                     <span className="rounded-[3px] bg-signal px-1.5 font-mono text-[0.65rem] leading-[1.5] text-white">1</span>
                   </span>
                 </li>
-                {["Anbieter B", "Anbieter C"].map((name, n) => (
+                {t.others.map((name, n) => (
                   <li
                     key={name}
                     className="answer-line flex items-center justify-between gap-3 rounded-xl border border-line px-3.5 py-2.5"
@@ -142,7 +200,7 @@ export function AnswerPanel() {
 
               {/* Quellen */}
               <div className="answer-line mt-5 border-t border-line pt-4" style={{ animationDelay: "760ms" }}>
-                <p className="eyebrow mb-2.5 text-[0.62rem] text-muted">Quellen</p>
+                <p className="eyebrow mb-2.5 text-[0.62rem] text-muted">{t.sources}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {s.sources.map((src, n) => (
                     <span
@@ -183,7 +241,7 @@ export function AnswerPanel() {
       </div>
 
       <figcaption className="mt-4 text-right font-mono text-[0.66rem] uppercase tracking-[0.12em] text-muted sm:ml-10">
-        Schematische Darstellung · Beispielfragen
+        {t.caption}
       </figcaption>
     </figure>
   );

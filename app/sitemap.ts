@@ -2,6 +2,9 @@ export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { articles } from "@/content/articles";
+import { routes } from "@/lib/i18n";
+
+const url = (p: string) => `${site.url}${p === "/" ? "/" : `${p}/`}`;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-10-01");
@@ -24,8 +27,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/impressum", 0.2],
     ["/datenschutz", 0.2],
   ];
+  // hreflang-Paare Deutsch ↔ Englisch
+  const alternatesFor = (p: string) => {
+    const hit = routes.find(([de, en]) => de === p || en === p);
+    return hit ? { alternates: { languages: { de: url(hit[0]), en: url(hit[1]), "x-default": url(hit[0]) } } } : {};
+  };
+  const enPages = pages.flatMap(([p, priority]) => {
+    const hit = routes.find(([de]) => de === p);
+    return hit ? [[hit[1], priority] as [string, number]] : [];
+  });
   return [
-    ...pages.map(([p, priority]) => ({ url: `${site.url}${p === "/" ? "/" : `${p}/`}`, lastModified, priority })),
+    ...[...pages, ...enPages].map(([p, priority]) => ({ url: url(p), lastModified, priority, ...alternatesFor(p) })),
     ...articles.map((a) => ({ url: `${site.url}/ratgeber/${a.slug}/`, lastModified: new Date(a.updated), priority: 0.6 })),
   ];
 }

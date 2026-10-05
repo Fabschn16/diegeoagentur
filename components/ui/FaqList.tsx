@@ -2,9 +2,11 @@ import type { Faq } from "@/lib/faq";
 import { ArrowRight, Plus } from "./Icons";
 import { RichText } from "./RichText";
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n";
 
 /** Native <details> – ohne JavaScript bedienbar und vollständig crawlbar. */
-export function FaqList({ items, tone = "ink" }: { items: Faq[]; tone?: "ink" | "paper" }) {
+/** `locale` nur zur Einheitlichkeit: Fragen und Antworten kommen sprachspezifisch über `items`. */
+export function FaqList({ items, tone = "ink" }: { items: Faq[]; tone?: "ink" | "paper"; locale?: Locale }) {
   const line = tone === "paper" ? "border-night-line" : "border-line";
   const muted = tone === "paper" ? "text-fog" : "text-muted";
   return (

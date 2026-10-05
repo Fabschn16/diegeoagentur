@@ -1,20 +1,42 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { processSteps } from "@/lib/services";
+import { l10n } from "@/lib/l10n";
+import type { Locale } from "@/lib/i18n";
 
-export function Process({ index = "04" }: { index?: string }) {
+const copy = {
+  de: {
+    eyebrow: "Prozess",
+    title: (
+      <>
+        Fünf Schritte. <span className="em">Ein wiederholbares System.</span>
+      </>
+    ),
+    lead: "GEO ist kein einmaliges Projekt. Wir arbeiten in einem klaren Zyklus aus Analyse, Umsetzung und Messung – und steuern auf Basis echter Daten nach.",
+    cycle: "Monitoring und Optimierung laufen als Zyklus weiter – weil sich KI-Systeme und Ihr Wettbewerb laufend verändern.",
+  },
+  en: {
+    eyebrow: "Process",
+    title: (
+      <>
+        Five steps. <span className="em">One repeatable system.</span>
+      </>
+    ),
+    lead: "GEO is not a one-off project. We work in a clear cycle of analysis, implementation and measurement, and adjust course based on real data.",
+    cycle: "Monitoring and optimisation continue as a cycle, because AI systems and your competitors keep changing.",
+  },
+};
+
+export function Process({ index = "04", locale = "de" }: { index?: string; locale?: Locale }) {
+  const t = copy[locale];
+  const { processSteps } = l10n(locale);
   return (
     <section aria-labelledby="prozess" className="py-24 lg:py-36">
       <div className="container-x">
         <SectionHeader
           index={index}
-          eyebrow="Prozess"
-          title={
-            <span id="prozess">
-              Fünf Schritte. <span className="em">Ein wiederholbares System.</span>
-            </span>
-          }
+          eyebrow={t.eyebrow}
+          title={<span id="prozess">{t.title}</span>}
           align="split"
-          lead="GEO ist kein einmaliges Projekt. Wir arbeiten in einem klaren Zyklus aus Analyse, Umsetzung und Messung – und steuern auf Basis echter Daten nach."
+          lead={t.lead}
         />
 
         <ol className="relative mt-16 grid gap-0 lg:mt-24 lg:grid-cols-5">
@@ -49,7 +71,7 @@ export function Process({ index = "04" }: { index?: string }) {
             <path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <p className="text-[0.9rem] text-ink-2">
-            Monitoring und Optimierung laufen als Zyklus weiter – weil sich KI-Systeme und Ihr Wettbewerb laufend verändern.
+            {t.cycle}
           </p>
         </div>
       </div>

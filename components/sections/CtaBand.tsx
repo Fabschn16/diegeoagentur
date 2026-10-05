@@ -1,16 +1,22 @@
 import { Button } from "@/components/ui/Button";
 import { TeamAvatars } from "@/components/ui/TeamAvatars";
-import { bookingHref, cta } from "@/lib/site";
+import { l10n } from "@/lib/l10n";
+import type { Locale } from "@/lib/i18n";
 
 export function CtaBand({
   title,
   text,
-  primary = cta.primary,
+  primary,
+  locale = "de",
 }: {
   title?: React.ReactNode;
   text?: string;
   primary?: { label: string; href: string };
+  locale?: Locale;
 }) {
+  const { cta, bookingHref, ui } = l10n(locale);
+  primary ??= cta.primary;
+  const en = locale === "en";
   return (
     <section className="py-20 lg:py-28">
       <div className="container-x">
@@ -19,18 +25,26 @@ export function CtaBand({
           <div className="relative grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <div className="mb-8 flex items-center gap-3">
-                <TeamAvatars size={44} tone="dark" />
-                <span className="text-[0.88rem] text-fog">Fabian & Jan antworten persönlich</span>
+                <TeamAvatars size={44} tone="dark" locale={locale} />
+                <span className="text-[0.88rem] text-fog">{ui.personal}</span>
               </div>
               <h2 className="text-h2 font-medium text-balance">
-                {title ?? (
-                  <>
-                    Wer bei KI nicht genannt wird, <span className="em text-fog">findet nicht statt.</span>
-                  </>
-                )}
+                {title ??
+                  (en ? (
+                    <>
+                      If AI doesn&apos;t mention you, <span className="em text-fog">you don&apos;t exist.</span>
+                    </>
+                  ) : (
+                    <>
+                      Wer bei KI nicht genannt wird, <span className="em text-fog">findet nicht statt.</span>
+                    </>
+                  ))}
               </h2>
               <p className="mt-6 max-w-xl text-lead text-fog">
-                {text ?? "Finden Sie heraus, wie ChatGPT, Gemini und Perplexity Ihr Unternehmen heute sehen – und was Sie dafür tun können."}
+                {text ??
+                  (en
+                    ? "Find out how ChatGPT, Gemini and Perplexity see your company today, and what you can do about it."
+                    : "Finden Sie heraus, wie ChatGPT, Gemini und Perplexity Ihr Unternehmen heute sehen – und was Sie dafür tun können.")}
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:col-span-4 lg:items-end">

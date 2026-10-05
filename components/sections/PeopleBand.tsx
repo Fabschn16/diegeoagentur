@@ -1,27 +1,47 @@
 import Image from "next/image";
-import { team } from "@/lib/site";
 import { Mail } from "@/components/ui/Icons";
+import { l10n } from "@/lib/l10n";
+import type { Locale } from "@/lib/i18n";
+
+const copy = {
+  de: {
+    label: "Ihre Ansprechpartner",
+    alt: "Fabian Schnabel und Jan Hugo, Gründer und Geschäftsführer von Die GEO Agentur",
+    eyebrow: "Persönlich statt Account-Manager",
+    title: "Sie sprechen direkt mit den Gründern – ",
+    titleEm: "von der ersten Analyse bis zum Reporting.",
+  },
+  en: {
+    label: "Your contacts",
+    alt: "Fabian Schnabel and Jan Hugo, founders and managing directors of Die GEO Agentur",
+    eyebrow: "Personal, not an account manager",
+    title: "You talk directly to the founders – ",
+    titleEm: "from the first analysis to the reporting.",
+  },
+};
 
 /** Bildband mit Fabian und Jan – gibt der Startseite früh ein Gesicht. */
-export function PeopleBand() {
+export function PeopleBand({ locale = "de" }: { locale?: Locale }) {
+  const t = copy[locale];
+  const { team } = l10n(locale);
   const ordered = ["fabian", "jan"].map((id) => team.find((t) => t.id === id)!);
   return (
-    <section aria-label="Ihre Ansprechpartner" className="pb-24 lg:pb-32">
+    <section aria-label={t.label} className="pb-24 lg:pb-32">
       <div className="container-x">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
           <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-paper-2 lg:col-span-7" data-reveal>
             <Image
               src="/images/team/team.jpg"
-              alt="Fabian Schnabel und Jan Hugo, Gründer und Geschäftsführer von Die GEO Agentur"
+              alt={t.alt}
               fill
               sizes="(min-width: 1024px) 700px, 100vw"
               className="object-cover"
             />
           </div>
           <div className="lg:col-span-5" data-reveal style={{ ["--reveal-delay" as string]: "100ms" }}>
-            <p className="eyebrow text-muted">Persönlich statt Account-Manager</p>
+            <p className="eyebrow text-muted">{t.eyebrow}</p>
             <p className="mt-5 text-[1.6rem] font-medium leading-[1.2] tracking-[-0.02em] sm:text-[2rem]">
-              Sie sprechen direkt mit den Gründern – <span className="em">von der ersten Analyse bis zum Reporting.</span>
+              {t.title}<span className="em">{t.titleEm}</span>
             </p>
             <ul className="mt-8 space-y-2.5">
               {ordered.map((p) => (

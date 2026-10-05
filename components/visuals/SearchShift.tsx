@@ -1,3 +1,42 @@
+import type { Locale } from "@/lib/i18n";
+
+const copy = {
+  de: {
+    before: "Bisher",
+    beforeTag: "Suche = Linkliste",
+    beforeFlow: ["Nutzer", "Google", "10 Ergebnisse", "Website"],
+    resultsLabel: "Zehn Suchergebnisse",
+    yourSite: "Ihre Website",
+    visible: "sichtbar · klickbar",
+    beforeText: "Auch auf Position 5 wurde ein Unternehmen gefunden. Nutzer haben verglichen, geklickt und selbst entschieden.",
+    now: "Zunehmend",
+    nowTag: "Suche = Antwort",
+    nowFlow: ["Nutzer", "KI-Assistent", "Antwort", "Wenige Empfehlungen"],
+    recommended: "Empfohlene Anbieter",
+    providers: ["Anbieter A", "Anbieter B", "Anbieter C"],
+    brand: "Ihre Marke",
+    notMentioned: "nicht genannt",
+    nowText: "Eine KI nennt häufig nur wenige konkrete Anbieter. Wer nicht dabei ist, wird in diesem Moment nicht in Betracht gezogen.",
+  },
+  en: {
+    before: "Until now",
+    beforeTag: "Search = list of links",
+    beforeFlow: ["User", "Google", "10 results", "Website"],
+    resultsLabel: "Ten search results",
+    yourSite: "Your website",
+    visible: "visible · clickable",
+    beforeText: "Even in position 5, a company still got found. Users compared, clicked and decided for themselves.",
+    now: "Increasingly",
+    nowTag: "Search = answer",
+    nowFlow: ["User", "AI assistant", "Answer", "A few recommendations"],
+    recommended: "Recommended providers",
+    providers: ["Provider A", "Provider B", "Provider C"],
+    brand: "Your brand",
+    notMentioned: "not mentioned",
+    nowText: "An AI often names only a handful of specific providers. If you are not among them, you are not considered at that moment.",
+  },
+};
+
 function Flow({ steps, highlight }: { steps: string[]; highlight?: number }) {
   return (
     <ol className="flex flex-wrap items-center gap-x-2 gap-y-2" aria-label={steps.join(" → ")}>
@@ -21,19 +60,20 @@ function Flow({ steps, highlight }: { steps: string[]; highlight?: number }) {
   );
 }
 
-export function SearchShift() {
+export function SearchShift({ locale = "de" }: { locale?: Locale }) {
+  const t = copy[locale];
   return (
     <div className="grid gap-4 lg:grid-cols-2 lg:gap-6">
       {/* Früher */}
       <div className="rounded-[20px] border border-night-line bg-night-2 p-6 sm:p-8" data-reveal>
         <div className="flex items-baseline justify-between">
-          <p className="eyebrow text-fog">Bisher</p>
-          <p className="font-mono text-[0.7rem] text-fog">Suche = Linkliste</p>
+          <p className="eyebrow text-fog">{t.before}</p>
+          <p className="font-mono text-[0.7rem] text-fog">{t.beforeTag}</p>
         </div>
         <div className="mt-5">
-          <Flow steps={["Nutzer", "Google", "10 Ergebnisse", "Website"]} />
+          <Flow steps={t.beforeFlow} />
         </div>
-        <ol className="mt-8 space-y-1.5" aria-label="Zehn Suchergebnisse">
+        <ol className="mt-8 space-y-1.5" aria-label={t.resultsLabel}>
           {Array.from({ length: 10 }).map((_, n) => {
             const you = n === 4;
             return (
@@ -44,8 +84,8 @@ export function SearchShift() {
                 <span className={`w-5 font-mono text-[0.68rem] ${you ? "text-paper" : "text-fog/60"}`}>{String(n + 1).padStart(2, "0")}</span>
                 {you ? (
                   <span className="flex flex-1 items-center justify-between gap-3 text-[0.85rem] text-paper">
-                    Ihre Website
-                    <span className="font-mono text-[0.66rem] text-fog">sichtbar · klickbar</span>
+                    {t.yourSite}
+                    <span className="font-mono text-[0.66rem] text-fog">{t.visible}</span>
                   </span>
                 ) : (
                   <span className="h-1.5 rounded-full bg-night-line" style={{ width: `${82 - ((n * 17) % 40)}%` }} />
@@ -55,19 +95,19 @@ export function SearchShift() {
           })}
         </ol>
         <p className="mt-6 border-t border-night-line pt-5 text-[0.92rem] leading-relaxed text-fog">
-          Auch auf Position 5 wurde ein Unternehmen gefunden. Nutzer haben verglichen, geklickt und selbst entschieden.
+          {t.beforeText}
         </p>
       </div>
 
       {/* Heute */}
       <div className="rounded-[20px] border border-paper/20 bg-paper p-6 text-ink sm:p-8" data-reveal style={{ ["--reveal-delay" as string]: "120ms" }}>
         <div className="flex items-baseline justify-between">
-          <p className="eyebrow text-muted">Zunehmend</p>
-          <p className="font-mono text-[0.7rem] text-muted">Suche = Antwort</p>
+          <p className="eyebrow text-muted">{t.now}</p>
+          <p className="font-mono text-[0.7rem] text-muted">{t.nowTag}</p>
         </div>
         <div className="mt-5 [&_span.rounded-full]:border-line-2 [&_span.rounded-full]:text-muted">
-          <ol className="flex flex-wrap items-center gap-x-2 gap-y-2" aria-label="Nutzer → KI-Assistent → Antwort → wenige Empfehlungen">
-            {["Nutzer", "KI-Assistent", "Antwort", "Wenige Empfehlungen"].map((s, i, arr) => (
+          <ol className="flex flex-wrap items-center gap-x-2 gap-y-2" aria-label={locale === "en" ? t.nowFlow.join(" → ") : "Nutzer → KI-Assistent → Antwort → wenige Empfehlungen"}>
+            {t.nowFlow.map((s, i, arr) => (
               <li key={s} className="flex items-center gap-2">
                 <span
                   className={`rounded-full border px-3 py-1.5 font-mono text-[0.7rem] tracking-wide ${
@@ -91,21 +131,21 @@ export function SearchShift() {
             <span className="block h-1.5 w-[94%] rounded-full bg-paper-2" />
             <span className="block h-1.5 w-[70%] rounded-full bg-paper-2" />
           </div>
-          <ul className="mt-5 space-y-2" aria-label="Empfohlene Anbieter">
-            {["Anbieter A", "Anbieter B", "Anbieter C"].map((a, n) => (
+          <ul className="mt-5 space-y-2" aria-label={t.recommended}>
+            {t.providers.map((a, n) => (
               <li key={a} className="flex items-center justify-between rounded-xl border border-line px-3.5 py-2.5 text-[0.88rem]">
                 {a}
                 <span className="rounded-[3px] bg-ink px-1.5 font-mono text-[0.65rem] leading-[1.5] text-paper">{n + 1}</span>
               </li>
             ))}
             <li className="flex items-center justify-between rounded-xl border border-dashed border-signal/60 px-3.5 py-2.5 text-[0.88rem] text-muted">
-              Ihre Marke
-              <span className="font-mono text-[0.66rem] uppercase tracking-[0.08em] text-signal">nicht genannt</span>
+              {t.brand}
+              <span className="font-mono text-[0.66rem] uppercase tracking-[0.08em] text-signal">{t.notMentioned}</span>
             </li>
           </ul>
         </div>
         <p className="mt-6 border-t border-line pt-5 text-[0.92rem] leading-relaxed text-muted">
-          Eine KI nennt häufig nur wenige konkrete Anbieter. Wer nicht dabei ist, wird in diesem Moment nicht in Betracht gezogen.
+          {t.nowText}
         </p>
       </div>
     </div>

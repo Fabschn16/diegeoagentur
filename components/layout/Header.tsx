@@ -5,17 +5,35 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { ArrowRight } from "@/components/ui/Icons";
-import { cta, site } from "@/lib/site";
-import { coreServices, platformServices } from "@/lib/services";
+import { site } from "@/lib/site";
+import { l10n } from "@/lib/l10n";
+import { localeOf, switchPath, type Locale } from "@/lib/i18n";
 
-const nav = [
-  { label: "GEO Wissen", href: "/ratgeber" },
-  { label: "Über uns", href: "/ueber-uns" },
-  { label: "Kontakt", href: "/kontakt" },
-];
+const navs = {
+  de: [
+    { label: "GEO Wissen", href: "/ratgeber" },
+    { label: "Über uns", href: "/ueber-uns" },
+    { label: "Kontakt", href: "/kontakt" },
+  ],
+  en: [
+    { label: "What is GEO?", href: "/en/generative-engine-optimization" },
+    { label: "About us", href: "/en/about" },
+    { label: "Contact", href: "/en/contact" },
+  ],
+};
+
+/** Links für „GEO Beratung“, „GEO Audit“ und „GEO Agentur“ je Sprache. */
+const paths = {
+  de: { services: "/leistungen", consulting: "/geo-beratung", audit: "/geo-audit", agency: "/geo-agentur", visibility: "/ai-visibility" },
+  en: { services: "/en/services", consulting: "/en/geo-consulting", audit: "/en/geo-audit", agency: "/en/geo-agency", visibility: "/en/ai-visibility" },
+};
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
+  const locale = localeOf(pathname);
+  const { cta, coreServices, platformServices, ui } = l10n(locale);
+  const nav = navs[locale];
+  const P = paths[locale];
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -42,8 +60,8 @@ export function Header() {
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
   const leistungenActive =
-    isActive("/leistungen") ||
-    [...platformServices.map((p) => p.href), "/geo-audit", "/geo-beratung", "/geo-agentur", "/ai-visibility"].some((h) => isActive(h));
+    isActive(P.services) ||
+    [...platformServices.map((p) => p.href), P.audit, P.consulting, P.agency, P.visibility].some((h) => isActive(h));
 
   const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -63,10 +81,10 @@ export function Header() {
       }`}
     >
       <div className="container-x flex h-[68px] items-center justify-between gap-6 lg:h-[76px]">
-        <Logo />
+        <Logo locale={locale} />
 
         {/* Desktop */}
-        <nav aria-label="Hauptnavigation" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label={ui.mainNav} className="hidden items-center gap-1 lg:flex">
           <div className="relative" onMouseEnter={openMenu} onMouseLeave={closeMenu}>
             <button
               type="button"
@@ -77,7 +95,7 @@ export function Header() {
                 leistungenActive ? "text-ink" : "text-ink-2"
               }`}
             >
-              Leistungen
+              {ui.services}
               <svg viewBox="0 0 10 6" aria-hidden="true" className={`w-2.5 transition-transform duration-300 ${menu ? "rotate-180" : ""}`}>
                 <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round" />
               </svg>
@@ -90,7 +108,7 @@ export function Header() {
             >
               <div className="grid grid-cols-[1.35fr_1fr] overflow-hidden rounded-2xl border border-line bg-card shadow-[0_30px_80px_-30px_rgba(16,17,15,0.35)]">
                 <div className="p-6">
-                  <p className="eyebrow mb-4 text-muted">Leistungen</p>
+                  <p className="eyebrow mb-4 text-muted">{ui.services}</p>
                   <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
                     {coreServices.map((s) => (
                       <li key={s.id}>
@@ -103,7 +121,7 @@ export function Header() {
                   </ul>
                 </div>
                 <div className="border-l border-line bg-paper/60 p-6">
-                  <p className="eyebrow mb-4 text-muted">Nach Plattform</p>
+                  <p className="eyebrow mb-4 text-muted">{ui.byPlatform}</p>
                   <ul className="space-y-0.5">
                     {platformServices.map((p) => (
                       <li key={p.id}>
@@ -114,20 +132,20 @@ export function Header() {
                       </li>
                     ))}
                     <li>
-                      <Link href="/geo-beratung" className="flex items-center justify-between rounded-lg px-3 py-2 text-[0.9rem] transition-colors hover:bg-card">
-                        GEO Beratung
+                      <Link href={P.consulting} className="flex items-center justify-between rounded-lg px-3 py-2 text-[0.9rem] transition-colors hover:bg-card">
+                        {ui.consulting}
                         <ArrowRight className="size-3.5 text-muted" />
                       </Link>
                     </li>
                     <li>
-                      <Link href="/geo-agentur" className="flex items-center justify-between rounded-lg px-3 py-2 text-[0.9rem] transition-colors hover:bg-card">
-                        Was macht eine GEO Agentur?
+                      <Link href={P.agency} className="flex items-center justify-between rounded-lg px-3 py-2 text-[0.9rem] transition-colors hover:bg-card">
+                        {ui.whatIsAgency}
                         <ArrowRight className="size-3.5 text-muted" />
                       </Link>
                     </li>
                   </ul>
-                  <Link href="/leistungen" className="mt-5 flex items-center gap-2 px-3 text-[0.85rem] font-medium">
-                    Alle Leistungen im Überblick <ArrowRight className="size-3.5" />
+                  <Link href={P.services} className="mt-5 flex items-center gap-2 px-3 text-[0.85rem] font-medium">
+                    {ui.allServices} <ArrowRight className="size-3.5" />
                   </Link>
                 </div>
               </div>
@@ -148,6 +166,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitch pathname={pathname} locale={locale} label={ui.language} />
           <Link
             href={cta.primaryShort.href}
             className="group hidden h-10 items-center gap-2 rounded-full bg-ink pl-4 pr-3.5 text-[0.86rem] font-medium text-paper transition-colors hover:bg-ink-2 sm:inline-flex"
@@ -164,7 +183,7 @@ export function Header() {
             className="relative -mr-2 flex size-11 items-center justify-center lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Menü schließen" : "Menü öffnen"}
+            aria-label={open ? ui.menuClose : ui.menuOpen}
             onClick={() => setOpen((v) => !v)}
           >
             <span className={`absolute h-px w-5 bg-ink transition-transform duration-300 ${open ? "rotate-45" : "-translate-y-[4px]"}`} />
@@ -182,9 +201,9 @@ export function Header() {
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
-        <nav aria-label="Mobile Navigation" className="container-x flex min-h-full flex-col pb-8 pt-6">
+        <nav aria-label={ui.mobileNav} className="container-x flex min-h-full flex-col pb-8 pt-6">
           <ul className="border-t border-line">
-            {[{ label: "Leistungen", href: "/leistungen" }, ...nav].map((n, i) => (
+            {[{ label: ui.services, href: P.services }, ...nav].map((n, i) => (
               <li key={n.href} className="border-b border-line">
                 <Link
                   href={n.href}
@@ -197,9 +216,9 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <p className="eyebrow mt-8 mb-3 text-muted">Schwerpunkte</p>
+          <p className="eyebrow mt-8 mb-3 text-muted">{ui.focus}</p>
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-[0.95rem] text-ink-2">
-            {[...platformServices.map((p) => ({ label: p.title, href: p.href })), { label: "GEO Audit", href: "/geo-audit" }, { label: "GEO Beratung", href: "/geo-beratung" }, { label: "GEO Agentur", href: "/geo-agentur" }].map((l) => (
+            {[...platformServices.map((p) => ({ label: p.title, href: p.href })), { label: ui.audit, href: P.audit }, { label: ui.consulting, href: P.consulting }, { label: ui.agency, href: P.agency }].map((l) => (
               <li key={l.href}>
                 <Link href={l.href}>{l.label}</Link>
               </li>
@@ -210,11 +229,43 @@ export function Header() {
               {cta.primary.label} <ArrowRight />
             </Link>
             <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="flex h-14 items-center justify-center rounded-full border border-line-2 font-medium">
-              {site.phoneDisplay}
+              {locale === "en" ? site.phone : site.phoneDisplay}
             </a>
           </div>
         </nav>
       </div>
     </>
+  );
+}
+
+/** Sprachumschalter „DE | EN“ – führt zur Entsprechung der aktuellen Seite, sonst zur Startseite der Zielsprache. */
+function LanguageSwitch({ pathname, locale, label }: { pathname: string; locale: Locale; label: string }) {
+  const langs: { code: Locale; label: string; name: string }[] = [
+    { code: "de", label: "DE", name: "Deutsch" },
+    { code: "en", label: "EN", name: "English" },
+  ];
+  return (
+    <nav aria-label={label} className="flex items-center font-mono text-[0.72rem] uppercase tracking-[0.1em]">
+      {langs.map((l, i) => (
+        <span key={l.code} className="flex items-center">
+          {i > 0 && <span aria-hidden="true" className="px-0.5 text-line-2">|</span>}
+          {l.code === locale ? (
+            <span aria-current="true" className="px-1.5 py-2 text-ink">
+              {l.label}
+            </span>
+          ) : (
+            <Link
+              href={switchPath(pathname, l.code)}
+              hrefLang={l.code}
+              lang={l.code}
+              title={l.name}
+              className="px-1.5 py-2 text-muted transition-colors hover:text-ink"
+            >
+              {l.label}
+            </Link>
+          )}
+        </span>
+      ))}
+    </nav>
   );
 }
