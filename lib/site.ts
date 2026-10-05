@@ -81,6 +81,19 @@ export const provenStats = [
   { value: "20+ Mio. €", label: "Ad Spend jährlich in Verantwortung" },
 ] as const;
 
+/**
+ * Kunden von Daily Rocket bzw. der GEO Agentur, die laut Fabian (Okt. 2026) auch im Bereich KI/GEO betreut werden.
+ * Logos liegen unter public/images/kunden/.
+ */
+export const clients = [
+  { name: "Thomas Hoof Produktgesellschaft", logo: "/images/kunden/thpg.svg" },
+  { name: "TBR Safety Solutions", logo: "/images/kunden/tbr-safety.png" },
+  { name: "MAX2H", logo: "/images/kunden/max2h.png" },
+  { name: "Hotel Rivers Passau", logo: "/images/kunden/hotel-rivers.svg" },
+  { name: "Bogner Metall", logo: "/images/kunden/bogner-metall.png" },
+  { name: "Pure Natural Choice", logo: "/images/kunden/pure-natural-choice.png" },
+] as const;
+
 export const cta = {
   primary: { label: "KI-Sichtbarkeit prüfen lassen", href: "/geo-audit#check" },
   primaryShort: { label: "KI-Sichtbarkeit prüfen", href: "/geo-audit#check" },

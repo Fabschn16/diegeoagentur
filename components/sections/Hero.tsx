@@ -22,8 +22,16 @@ export function Hero() {
               Werden Sie in <span className="whitespace-nowrap">ChatGPT & Co.</span> <span className="em">gefunden.</span>
             </span>
           </h1>
+          <div className="mt-8 flex items-center gap-4" data-reveal style={{ ["--reveal-delay" as string]: "100ms" }}>
+            <TeamAvatars size={64} />
+            <p className="text-[0.95rem] leading-snug text-muted">
+              <span className="font-medium text-ink">Fabian Schnabel & Jan Hugo</span>
+              <br />
+              Gründer · Ihre persönlichen Ansprechpartner
+            </p>
+          </div>
           <p
-            className="mt-8 max-w-[36rem] text-lead text-pretty text-ink-2"
+            className="mt-7 max-w-[36rem] text-lead text-pretty text-ink-2"
             data-reveal
             style={{ ["--reveal-delay" as string]: "140ms" }}
           >
@@ -41,14 +49,9 @@ export function Hero() {
               {cta.secondary.label}
             </Button>
           </div>
-          <div className="mt-6 flex items-center gap-3.5" data-reveal style={{ ["--reveal-delay" as string]: "280ms" }}>
-            <TeamAvatars size={40} />
-            <p className="text-[0.88rem] leading-snug text-muted">
-              Unverbindlich · 30 Minuten
-              <br />
-              Direkt mit <span className="text-ink">Fabian Schnabel & Jan Hugo</span>
-            </p>
-          </div>
+          <p className="mt-5 text-[0.88rem] leading-snug text-muted" data-reveal style={{ ["--reveal-delay" as string]: "280ms" }}>
+            Unverbindlich · 30 Minuten · direkt mit den Gründern
+          </p>
         </div>
 
         <div className="lg:col-span-5 lg:pt-4" data-reveal style={{ ["--reveal-delay" as string]: "200ms" }}>

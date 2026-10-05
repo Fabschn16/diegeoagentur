@@ -1,4 +1,5 @@
-import { platforms, provenStats, site } from "@/lib/site";
+import Image from "next/image";
+import { clients, platforms, provenStats, site } from "@/lib/site";
 
 export function PlatformStrip() {
   return (
@@ -36,8 +37,18 @@ export function PlatformStrip() {
             ))}
           </dl>
         </div>
+        <div className="mt-10 border-t border-line pt-8">
+          <h3 className="eyebrow text-muted">Unternehmen, die wir betreuen</h3>
+          <ul className="mt-6 grid grid-cols-3 items-center gap-x-8 gap-y-6 sm:grid-cols-6">
+            {clients.map((c) => (
+              <li key={c.name} className="relative h-10">
+                <Image src={c.logo} alt={c.name} fill sizes="160px" className="object-contain" />
+              </li>
+            ))}
+          </ul>
+        </div>
         <p className="mt-8 text-[0.74rem] text-muted/80">
-          Plattformnamen dienen ausschließlich der Einordnung. Es besteht keine Partnerschaft mit den genannten Anbietern. Kennzahlen: Daily Rocket, Stand September 2026.
+          Kennzahlen: Daily Rocket, Stand September 2026.
         </p>
       </div>
     </section>
