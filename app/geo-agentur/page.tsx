@@ -59,7 +59,7 @@ const sections: QA[] = [
   {
     q: "Welche KI-Suchmaschinen werden berücksichtigt?",
     a: [
-      "Wir berücksichtigen [ChatGPT](/chatgpt-seo), [Google Gemini](/gemini-seo), [Google AI Overviews](/google-ai-overviews) und den AI Mode, [Perplexity](/perplexity-seo) sowie [Microsoft Copilot und Claude](/ratgeber/copilot-und-claude).",
+      "Wir berücksichtigen [ChatGPT](/chatgpt-seo), [Google Gemini](/gemini-seo), [Google AI Overviews](/google-ai-overviews) und den AI Mode, [Perplexity](/perplexity-seo) sowie [Microsoft Copilot und Claude](/ratgeber/copilot-und-claude) und [Meta AI](/ratgeber/meta-ai).",
       "Welche Systeme Priorität haben, hängt davon ab, wo Ihre Zielgruppe recherchiert – das klären wir im Audit.",
     ],
   },
@@ -138,7 +138,7 @@ export default function GeoAgenturPage() {
               { k: "Sitz", v: `${site.address.city}, ${site.address.region} – tätig in ganz Deutschland` },
               { k: "Gründer", v: "Fabian Schnabel, Jan Hugo" },
               { k: "Unternehmen", v: `Ein Angebot der ${site.legalEntity} (Daily Rocket)` },
-              { k: "Plattformen", v: "ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, Claude" },
+              { k: "Plattformen", v: "ChatGPT, Gemini, Perplexity, Google AI Overviews, Copilot, Claude, Meta AI" },
               { k: "Einstieg", v: "Kostenloser KI-Sichtbarkeits-Check" },
               { k: "Preise", v: `GEO Audit ${pricing.audit} · Optimierung ${pricing.optimization} · Workshop ${pricing.workshop} (netto)` },
             ]}

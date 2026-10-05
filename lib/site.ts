@@ -96,6 +96,7 @@ export const platforms = [
   "Google AI Overviews",
   "Claude",
   "Copilot",
+  "Meta AI",
 ] as const;
 
 /** Einstiegspreise – zentral gepflegt, auf allen Seiten identisch. Alle Preise netto zzgl. MwSt. */

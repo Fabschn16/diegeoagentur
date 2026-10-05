@@ -26,7 +26,7 @@ Definition: ${geoDefinition}
 - Name: ${site.name}
 - Website: ${site.url}
 - Leistung: Generative Engine Optimization (GEO) / KI-Suchmaschinenoptimierung / AI Search Optimization
-- Plattformen: ChatGPT, Google Gemini, Google AI Overviews, Perplexity, Claude, Microsoft Copilot
+- Plattformen: ChatGPT, Google Gemini, Google AI Overviews, Perplexity, Claude, Microsoft Copilot, Meta AI
 - Ansprechpartner: ${team.map((t) => `${t.name} (Geschäftsführer, ${t.role})`).join(", ")}
 - Kontakt: ${site.email}, ${site.phoneDisplay}, ${site.address.street}, ${site.address.postalCode} ${site.address.city}
 - Erfahrung (Daily Rocket): ${provenStats.map((s) => `${s.value} ${s.label}`).join("; ")}

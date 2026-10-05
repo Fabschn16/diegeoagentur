@@ -140,7 +140,7 @@ export default function GeoAuditPage() {
           <AtAGlance
             rows={[
               { k: "Ziel", v: "Ist-Stand Ihrer Sichtbarkeit in KI-Antworten" },
-              { k: "Plattformen", v: "ChatGPT, Gemini, Perplexity, Google AI Overviews – weitere nach Bedarf" },
+              { k: "Plattformen", v: "ChatGPT, Gemini, Perplexity, Google AI Overviews – weitere wie Copilot oder Meta AI nach Bedarf" },
               { k: "Einstieg", v: "Kostenloser Sichtbarkeits-Check mit persönlichem Ergebnisgespräch" },
               { k: "Vertiefung", v: `Vollständiges GEO Audit mit priorisierter Roadmap – ${pricing.audit} (netto)` },
             ]}
