@@ -41,6 +41,7 @@ const sections: QA[] = [
     q: "How do you measure AI Visibility?",
     a: [
       "You measure AI Visibility by regularly and repeatedly running a fixed catalogue of questions that potential customers ask through the relevant AI systems, and analysing the answers in a structured way. What matters is repetition, competitor comparison and a transparent methodology.",
+      "The methodology in detail is described in the article [Measuring AI visibility: prompts, mentions, sources](/en/insights/measure-ai-visibility).",
     ],
   },
   {
@@ -59,7 +60,7 @@ const sections: QA[] = [
     q: "How do you improve AI Visibility?",
     a: [
       "You improve AI Visibility by strengthening the foundations AI systems rely on: technical readability ([Technical GEO](/en/services#technik)), content with clear answers ([Content for AI Search](/en/services#content)), a clearly defined brand entity ([Entity Optimization](/en/services#entitaeten)) and a presence on relevant sources ([Digital Authority](/en/services#autoritaet)).",
-      "Monitoring shows which of these measures are working and where adjustments are needed. Specific levers for ChatGPT are covered on our [ChatGPT SEO](/en/chatgpt-seo) page.",
+      "Monitoring shows which of these measures are working and where adjustments are needed. Specific levers for ChatGPT are described in the article [Getting visible in ChatGPT](/en/insights/get-visible-in-chatgpt).",
     ],
   },
   {
@@ -167,6 +168,8 @@ export default function AiVisibilityPageEn() {
         title="More on this topic"
         links={[
           { label: "Get a GEO Audit", href: "/en/geo-audit", note: "The starting point for any monitoring" },
+          { label: "Our methodology", href: "/en/insights/methodology-prompt-catalogue", note: "How we measure with the prompt catalogue" },
+          { label: "Measuring AI visibility", href: "/en/insights/measure-ai-visibility", note: "The fundamentals of measurement" },
           { label: "ChatGPT SEO", href: "/en/chatgpt-seo", note: "Visibility in ChatGPT" },
           { label: "Perplexity SEO", href: "/en/perplexity-seo", note: "Citations in Perplexity" },
           { label: "What is Generative Engine Optimization?", href: "/en/generative-engine-optimization", note: "Fundamentals and glossary" },

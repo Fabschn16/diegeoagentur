@@ -10,7 +10,7 @@ type PlatformExtra = {
 
 /**
  * English version of content/platformQa.ts: answer-first sections and internal links per platform page.
- * Links to German Ratgeber articles are left out (no English version yet).
+ * Ratgeber links point to the English articles under /en/insights/.
  */
 export const platformExtrasEn: Record<string, PlatformExtra> = {
   "chatgpt-seo": {
@@ -40,7 +40,7 @@ export const platformExtrasEn: Record<string, PlatformExtra> = {
         q: "How does ChatGPT select sources?",
         a: [
           "OpenAI does not disclose the exact weighting. What can be observed is that ChatGPT prefers to cite pages that are accessible, answer the specific question directly, appear up to date and are credible on their topic. For questions about providers, ChatGPT often draws on comparison articles, specialist portals, directories and review platforms, not just on vendors' own websites.",
-          "This is also why competitors are often mentioned instead of you.",
+          "Why this often leads to competitors being mentioned is explained in the article [Why does ChatGPT recommend my competitors?](/en/insights/chatgpt-recommends-competitors).",
         ],
       },
       {
@@ -77,6 +77,9 @@ export const platformExtrasEn: Record<string, PlatformExtra> = {
       },
     ],
     related: [
+      { label: "Getting visible in ChatGPT", href: "/en/insights/get-visible-in-chatgpt", note: "Practical guide" },
+      { label: "Why ChatGPT recommends competitors", href: "/en/insights/chatgpt-recommends-competitors", note: "Causes and countermeasures" },
+      { label: "ChatGPT Shopping and ChatGPT ads", href: "/en/insights/chatgpt-shopping-and-ads", note: "Organic recommendation vs. ads" },
       { label: "Measuring AI visibility", href: "/en/ai-visibility", note: "Monitoring and metrics" },
       { label: "What is Generative Engine Optimization?", href: "/en/generative-engine-optimization", note: "Fundamentals and glossary" },
     ],
@@ -122,13 +125,15 @@ export const platformExtrasEn: Record<string, PlatformExtra> = {
         id: "messen",
         q: "How do you measure visibility in Gemini?",
         a: [
-          "As with other AI systems, using a fixed prompt catalogue that is queried and analysed regularly. Gemini answers can vary by account, location and conversation history, so what counts is the trend across many queries. Our approach: [AI Visibility Monitoring](/en/ai-visibility).",
+          "As with other AI systems, using a fixed prompt catalogue that is queried and analysed regularly. Gemini answers can vary by account, location and conversation history, so what counts is the trend across many queries. Methodology: [Measuring AI visibility](/en/insights/measure-ai-visibility).",
         ],
       },
     ],
     related: [
       { label: "Google AI Overviews optimisation", href: "/en/google-ai-overviews", note: "AI answers in Google Search" },
+      { label: "Entity Optimization", href: "/en/insights/entity-optimization", note: "Your brand as an unambiguous entity" },
       { label: "Measuring AI visibility", href: "/en/ai-visibility", note: "Monitoring and metrics" },
+      { label: "What is AI search?", href: "/en/insights/what-is-ai-search", note: "How AI search works" },
     ],
   },
 
@@ -157,7 +162,7 @@ export const platformExtrasEn: Record<string, PlatformExtra> = {
         q: "Which content does Perplexity prefer to cite?",
         a: [
           "Perplexity does not disclose its selection criteria in detail. In practice, it often cites pages that answer a question precisely and early, are well structured, include current data and provide evidence. Long promotional copy without concrete statements is rarely cited.",
-          "How to build this kind of content is the subject of Answer Engine Optimization.",
+          "How to build this kind of content is described in the article [Answer Engine Optimization](/en/insights/answer-engine-optimization).",
         ],
       },
       {
@@ -176,6 +181,8 @@ export const platformExtrasEn: Record<string, PlatformExtra> = {
       },
     ],
     related: [
+      { label: "Answer Engine Optimization", href: "/en/insights/answer-engine-optimization", note: "Building content as answers" },
+      { label: "Measuring AI visibility", href: "/en/insights/measure-ai-visibility", note: "Methodology in detail" },
       { label: "ChatGPT SEO", href: "/en/chatgpt-seo", note: "Visibility in ChatGPT" },
       { label: "GEO Audit", href: "/en/geo-audit", note: "Your current status in AI search" },
     ],
@@ -207,7 +214,7 @@ export const platformExtrasEn: Record<string, PlatformExtra> = {
         q: "Which factors influence visibility in AI Overviews?",
         a: [
           "What matters is indexing and technical quality, content that answers specific questions in clear sections, verifiable expertise with identifiable authors, up-to-date information and good baseline organic visibility on the topic.",
-          "How classic SEO differs from optimising for AI answers is explained on our page on [Generative Engine Optimization](/en/generative-engine-optimization).",
+          "How classic SEO differs from optimising for AI answers is explained in the article [SEO vs. GEO](/en/insights/geo-vs-seo).",
         ],
       },
       {
@@ -221,12 +228,15 @@ export const platformExtrasEn: Record<string, PlatformExtra> = {
         id: "messen",
         q: "How do you measure visibility in AI Overviews?",
         a: [
-          "Google Search Console does not currently report impressions and clicks from AI Overviews separately. Measurement is therefore based on regularly checking relevant search terms and recording whether an overview appears and which pages are linked.",
+          "Google Search Console does not currently report impressions and clicks from AI Overviews separately. Measurement is therefore based on regularly checking relevant search terms and recording whether an overview appears and which pages are linked. More on this in the article [Google AI Overviews for businesses](/en/insights/google-ai-overviews-for-businesses).",
         ],
       },
     ],
     related: [
+      { label: "Google AI Overviews for businesses", href: "/en/insights/google-ai-overviews-for-businesses", note: "Guide" },
+      { label: "Google AI Mode", href: "/en/insights/google-ai-mode", note: "Google Search's AI mode" },
       { label: "Gemini SEO", href: "/en/gemini-seo", note: "Visibility in Google Gemini" },
+      { label: "SEO vs. GEO", href: "/en/insights/geo-vs-seo", note: "Differences and common ground" },
       { label: "What is Generative Engine Optimization?", href: "/en/generative-engine-optimization", note: "Fundamentals and glossary" },
     ],
   },

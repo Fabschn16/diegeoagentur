@@ -129,6 +129,7 @@ export default function AboutPageEn() {
         title="More about us"
         links={[
           { label: "Die GEO Agentur in facts", href: "/en/facts", note: "All key data, services and prices on one page" },
+          { label: "Our methodology", href: "/en/insights/methodology-prompt-catalogue", note: "How we measure AI visibility" },
           { label: "What does a GEO agency do?", href: "/en/geo-agency", note: "Services, process and costs" },
           { label: "Get in touch", href: "/en/contact", note: "We work in German and English" },
         ]}

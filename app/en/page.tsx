@@ -10,6 +10,7 @@ import { AuditSection } from "@/components/sections/AuditSection";
 import { Team } from "@/components/sections/Team";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { FaqSection } from "@/components/sections/FaqSection";
+import { Insights } from "@/components/sections/Insights";
 import { HubTeaser } from "@/components/sections/HubTeaser";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -56,8 +57,9 @@ export default function HomePageEn() {
       <AuditSection index="05" locale="en" />
       <Team locale="en" />
       <WhyUs locale="en" />
-      <FaqSection items={mainFaq} index="08" path="/en" locale="en" />
-      <HubTeaser index="09" locale="en" />
+      <Insights locale="en" />
+      <FaqSection items={mainFaq} index="09" path="/en" locale="en" />
+      <HubTeaser locale="en" />
       <CtaBand locale="en" />
     </>
   );

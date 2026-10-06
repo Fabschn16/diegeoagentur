@@ -62,7 +62,7 @@ const sections: QA[] = [
   {
     q: "Which AI search engines are covered?",
     a: [
-      "We cover [ChatGPT](/en/chatgpt-seo), [Google Gemini](/en/gemini-seo), [Google AI Overviews](/en/google-ai-overviews) and AI Mode, [Perplexity](/en/perplexity-seo), as well as Microsoft Copilot, Claude and Meta AI.",
+      "We cover [ChatGPT](/en/chatgpt-seo), [Google Gemini](/en/gemini-seo), [Google AI Overviews](/en/google-ai-overviews) and AI Mode, [Perplexity](/en/perplexity-seo), as well as [Microsoft Copilot and Claude](/en/insights/copilot-and-claude) and [Meta AI](/en/insights/meta-ai).",
       "Which systems take priority depends on where your target audience does its research; we clarify this in the audit.",
     ],
   },
@@ -86,7 +86,7 @@ const sections: QA[] = [
     id: "auswahl",
     q: "How do you recognise a good GEO agency?",
     a: [
-      "You can recognise a good GEO agency by its transparent methodology, solid search experience and realistic promises. Specifically: it discloses which prompt catalogue it uses and over what period it measures; it understands traditional SEO and technology; it only shows results backed by a traceable methodology; and it does not guarantee placements in AI answers. We disclose how we measure ourselves.",
+      "You can recognise a good GEO agency by its transparent methodology, solid search experience and realistic promises. Specifically: it discloses which prompt catalogue it uses and over what period it measures; it understands traditional SEO and technology; it only shows results backed by a traceable methodology; and it does not guarantee placements in AI answers. We disclose how we measure ourselves in our [methodology](/en/insights/methodology-prompt-catalogue).",
       "Be wary of promises such as “guaranteed #1 on ChatGPT”, of rankings without a methodology and of tactics that rely on manipulation rather than genuine content and mentions.",
     ],
   },
@@ -94,7 +94,7 @@ const sections: QA[] = [
     q: "GEO agency or SEO agency: which do I need?",
     a: [
       "Most companies need both, because GEO builds on SEO. A good GEO agency therefore always checks the SEO fundamentals as well and, if you wish, works together with your existing SEO agency.",
-      "The differences are explained in our guide [What is Generative Engine Optimization?](/en/generative-engine-optimization).",
+      "The differences in detail: [SEO vs. GEO](/en/insights/geo-vs-seo).",
     ],
   },
   {
@@ -182,6 +182,7 @@ export default function GeoAgencyPage() {
           { label: "Get a GEO Audit", href: "/en/geo-audit", note: "Where you stand in AI answers" },
           { label: "GEO consulting for in-house teams", href: "/en/geo-consulting", note: "Strategy, workshops, sparring" },
           { label: "Measure AI visibility", href: "/en/ai-visibility", note: "Metrics and monitoring" },
+          { label: "Developing a GEO strategy", href: "/en/insights/geo-strategy", note: "A six-step guide" },
           { label: "About Die GEO Agentur", href: "/en/about", note: "Team and way of working" },
         ]}
       />

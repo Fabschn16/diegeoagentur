@@ -3,7 +3,7 @@ import { pricingEn } from "./site";
 
 /**
  * Englische Fassung der Haupt-FAQ aus lib/faq.ts (gleiche Reihenfolge, gleiche Struktur).
- * Links zeigen auf englische Seiten; deutsche Ratgeber-Artikel werden nicht verlinkt.
+ * Links zeigen auf englische Seiten; Ratgeber-Links auf die englischen Artikel unter /en/insights/.
  */
 export const mainFaq: Faq[] = [
   {
@@ -36,6 +36,7 @@ export const mainFaq: Faq[] = [
       "SEO makes sure search engines find a website and rank it well in a list of results. GEO additionally makes sure AI systems understand a brand and include it in a written answer.",
       "In SEO, success is measured by rankings, clicks and organic traffic. In GEO, what counts are mentions, citations and how a brand is described in AI answers. Both share many foundations: technical quality, good content and authority.",
     ],
+    link: { label: "SEO vs. GEO: the difference in detail", href: "/en/insights/geo-vs-seo" },
   },
   {
     q: "Do I still need SEO if I do GEO?",
@@ -58,7 +59,7 @@ export const mainFaq: Faq[] = [
       "A company becomes more visible in ChatGPT when ChatGPT understands it clearly, finds up-to-date information about it, and trustworthy sources mention it in the right context. A mention cannot be guaranteed, but the conditions for it can be improved in a targeted way.",
       "The most important levers are: access for OpenAI's search crawler, pages that answer specific customer questions directly, a consistent description of services and location across the web, and mentions in comparisons, specialist portals and directories in your industry.",
     ],
-    link: { label: "How we approach ChatGPT SEO", href: "/en/chatgpt-seo" },
+    link: { label: "Guide: getting visible in ChatGPT", href: "/en/insights/get-visible-in-chatgpt" },
   },
   {
     q: "Can you influence which companies ChatGPT recommends?",
@@ -73,7 +74,7 @@ export const mainFaq: Faq[] = [
       "Usually because there is more clear, easy-to-find information about your competitors: clearer service pages, more mentions in comparisons and specialist portals, or a more consistent brand profile across the web.",
       "A GEO Audit shows for which questions competitors are mentioned, which sources the answers rely on and where the gaps in your presence are.",
     ],
-    link: { label: "What a GEO Audit covers", href: "/en/geo-audit" },
+    link: { label: "Guide: when ChatGPT recommends your competitors", href: "/en/insights/chatgpt-recommends-competitors" },
   },
   {
     q: "What role do external sources play in AI visibility?",

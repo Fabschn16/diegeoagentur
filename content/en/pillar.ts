@@ -69,7 +69,7 @@ export const pillarSections: QA[] = [
     q: "Which factors influence visibility in AI answers?",
     a: [
       "Visibility in AI answers depends mainly on five factors: technical accessibility, clarity of content, verifiability, a clearly defined brand entity and external authority.",
-      "Technically, AI crawlers must be able to reach the website and read its content without JavaScript ([Technical GEO](/en/services#technik)). In terms of content, pages should answer specific questions directly ([Content for AI Search](/en/services#content)). Verifiability comes from figures, examples, sources and identifiable authors. The brand entity must be described the same way everywhere ([Entity Optimization](/en/services#entitaeten)). And external sources such as industry portals, comparisons, directories and the press must confirm what a company stands for ([Digital Authority](/en/services#autoritaet)).",
+      "Technically, AI crawlers must be able to reach the website and read its content without JavaScript ([Technical GEO](/en/services#technik)). In terms of content, pages should answer specific questions directly ([Content for AI Search](/en/services#content)). Verifiability comes from figures, examples, sources and identifiable authors. The brand entity must be described the same way everywhere ([Entity Optimization](/en/insights/entity-optimization)). And external sources such as industry portals, comparisons, directories and the press must confirm what a company stands for ([Digital Authority](/en/services#autoritaet)).",
     ],
   },
   {
@@ -77,7 +77,7 @@ export const pillarSections: QA[] = [
     q: "Why does GEO matter right now?",
     a: [
       "GEO matters because a growing share of research happens in AI systems, and these systems often name only a handful of providers. In February 2026, ChatGPT reached around 900 million weekly active users; according to Alphabet, Google AI Overviews already had more than two billion monthly users in July 2025.",
-      "On Google, a company could still be found in position five. In an AI answer, there is often no position five. If you do not appear there, you are not being considered at that moment.",
+      "On Google, a company could still be found in position five. In an AI answer, there is often no position five. If you do not appear there, you are not being considered at that moment. More on how search is changing in the article [What is AI search?](/en/insights/what-is-ai-search).",
     ],
   },
   {
@@ -101,6 +101,7 @@ export const pillarSections: QA[] = [
     q: "Does GEO replace traditional search engine optimisation?",
     a: [
       "No. GEO builds on SEO and complements it. Many AI systems draw on search indexes, and technical quality, good content and authority benefit both. What is new is mainly the focus on questions instead of keywords, the importance of the brand entity, and measuring mentions instead of rankings.",
+      "The comparison in detail is covered in the article [SEO vs. GEO: what is the difference?](/en/insights/geo-vs-seo).",
     ],
   },
   {
@@ -116,7 +117,7 @@ export const pillarSections: QA[] = [
     q: "Which companies benefit from GEO?",
     a: [
       "GEO is particularly worthwhile for companies whose customers research before making a decision: B2B providers, SaaS companies, consultancies, law firms, service providers with complex offerings, e-commerce brands and regional providers with a wide catchment area.",
-      "What the right strategy looks like depends on the business model; we work it out with you in [GEO Consulting](/en/geo-consulting).",
+      "What a strategy looks like for each business model is described in the guide [Developing a GEO strategy](/en/insights/geo-strategy). There are industry guides for [SaaS providers](/en/insights/geo-for-saas), [online shops](/en/insights/geo-for-ecommerce) and [law and tax firms](/en/insights/geo-for-law-and-tax-firms).",
     ],
   },
 ];

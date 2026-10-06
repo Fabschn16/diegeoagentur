@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { articles, categories } from "@/content/articles";
+import { articlesEn, categoriesEn, categoryNameEn } from "@/content/en/articles";
 import { ArrowUpRight } from "@/components/ui/Icons";
 import { TextLink } from "@/components/ui/Button";
 import type { Locale } from "@/lib/i18n";
@@ -7,10 +8,6 @@ import type { Locale } from "@/lib/i18n";
 type Card = { key: string; category: string; title: string; href: string; meta: string };
 type Chip = { key: string; name: string; href: string };
 
-/**
- * Deutsch: Ratgeber-Beiträge. Englisch: Es gibt (noch) keine englischen Ratgeber-Artikel,
- * daher verweisen Karten und Themen ausschließlich auf englische Erklär- und Leistungsseiten.
- */
 const copy = {
   de: {
     eyebrow: "GEO Wissen",
@@ -37,46 +34,16 @@ const copy = {
         Understand how <span className="em">AI search</span> works.
       </>
     ),
-    all: { label: "All services", href: "/en/services" },
+    all: { label: "All articles", href: "/en/insights" },
     topics: "Topics",
-    cards: [
-      {
-        key: "geo",
-        category: "Basics",
-        title: "What is Generative Engine Optimization (GEO)?",
-        href: "/en/generative-engine-optimization",
-        meta: "Explainer",
-      },
-      {
-        key: "agency",
-        category: "Agency",
-        title: "What a GEO agency does, and what it costs",
-        href: "/en/geo-agency",
-        meta: "Explainer",
-      },
-      {
-        key: "visibility",
-        category: "Measurement",
-        title: "How to measure and improve AI visibility",
-        href: "/en/ai-visibility",
-        meta: "Explainer",
-      },
-      {
-        key: "aio",
-        category: "Platforms",
-        title: "Optimising for Google AI Overviews",
-        href: "/en/google-ai-overviews",
-        meta: "Explainer",
-      },
-    ] as Card[],
-    chips: [
-      { key: "chatgpt", name: "ChatGPT SEO", href: "/en/chatgpt-seo" },
-      { key: "gemini", name: "Gemini SEO", href: "/en/gemini-seo" },
-      { key: "perplexity", name: "Perplexity SEO", href: "/en/perplexity-seo" },
-      { key: "audit", name: "GEO Audit", href: "/en/geo-audit" },
-      { key: "consulting", name: "GEO Consulting", href: "/en/geo-consulting" },
-      { key: "facts", name: "Agency facts", href: "/en/facts" },
-    ] as Chip[],
+    cards: articlesEn.map<Card>((a) => ({
+      key: a.slug,
+      category: categoryNameEn(a.category),
+      title: a.title,
+      href: `/en/insights/${a.slug}`,
+      meta: `${a.readingMinutes} min read`,
+    })),
+    chips: categoriesEn.map<Chip>((c) => ({ key: c.slug, name: c.name, href: `/en/insights#${c.slug}` })),
   },
 };
 
