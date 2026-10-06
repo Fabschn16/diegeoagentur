@@ -217,7 +217,7 @@ export default function FactsPageEn() {
           v: (
             <>
               <a href={site.social.linkedin} target="_blank" rel="noopener" className={linkCls}>
-                LinkedIn (Daily Rocket)
+                LinkedIn
               </a>{" "}
               ·{" "}
               <a href={site.social.instagram} target="_blank" rel="noopener" className={linkCls}>

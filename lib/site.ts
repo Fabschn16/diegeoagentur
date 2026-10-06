@@ -42,7 +42,7 @@ export const site = {
     description: "Performance-Marketing-Agentur für Google Ads, Tracking und KI",
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/dailyrocket",
+    linkedin: "https://www.linkedin.com/company/105417260/",
     instagram: "https://www.instagram.com/dailyrocket.de",
   },
 } as const;
