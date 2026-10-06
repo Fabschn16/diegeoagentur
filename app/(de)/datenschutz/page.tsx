@@ -68,7 +68,7 @@ export default function DatenschutzPage() {
       <h2>6. Cookies und Einwilligungsverwaltung</h2>
       <p>
         Wir verwenden ein eigenes Cookie-Banner, um Einwilligungen einzuholen und zu verwalten. Ihre Auswahl wird im lokalen Speicher Ihres
-        Browsers abgelegt (Schlüssel „dga-consent-v1“); Dienste wie der Google Tag Manager werden erst nach Ihrer Einwilligung geladen. Session-Cookies werden nach dem Schließen des Browsers gelöscht, dauerhafte Cookies bleiben für den jeweils angegebenen
+        Browsers abgelegt (Schlüssel „dga-consent-v2“), damit das Banner nicht bei jedem Besuch erneut erscheint. Google Analytics 4 wird erst nach Ihrer Einwilligung geladen. Session-Cookies werden nach dem Schließen des Browsers gelöscht, dauerhafte Cookies bleiben für den jeweils angegebenen
         Zeitraum gespeichert. Einwilligungen können jederzeit über die Cookie-Einstellungen widerrufen werden. Der Nutzung zu Zwecken
         interessenbezogener Werbung können Sie zudem unter{" "}
         <a href="https://www.youronlinechoices.eu" target="_blank" rel="noopener">
@@ -97,29 +97,49 @@ export default function DatenschutzPage() {
         Handelsrelevante Unterlagen bewahren wir sechs Jahre (§ 257 HGB), steuerrelevante Unterlagen zehn Jahre (§ 147 AO) auf.
       </p>
 
-      <h2>9. Webanalyse mit Google Analytics 4 und Google Tag Manager</h2>
+      <h2>9. Webanalyse mit Google Analytics 4</h2>
       <p>
-        Mit Ihrer Einwilligung setzen wir Google Analytics 4 und den Google Tag Manager (Google Ireland Limited) ein. IP-Adressen werden
-        gekürzt, die Auswertung erfolgt pseudonymisiert. Sie können die Erfassung zusätzlich über das Browser-Add-on unter{" "}
-        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">
-          tools.google.com/dlpage/gaoptout
-        </a>{" "}
-        verhindern.
+        Mit Ihrer Einwilligung nutzen wir Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street,
+        Dublin 4, Irland („Google“). Zweck ist die Reichweitenmessung: Wir sehen, wie viele Besucher unsere Website hat, welche Seiten
+        aufgerufen werden und über welche Wege Besucher zu uns kommen. Dabei werden Nutzungsdaten (z. B. aufgerufene Seiten, Verweildauer,
+        Herkunft des Besuchs, Geräte- und Browserinformationen, ungefährer Standort) pseudonymisiert verarbeitet. IP-Adressen werden von
+        Google Analytics 4 standardmäßig nicht gespeichert. Google Signals und Werbefunktionen sind deaktiviert.
+      </p>
+      <p>
+        Das Skript von Google Analytics (gtag.js) wird erst geladen, nachdem Sie im Cookie-Banner auf „Akzeptieren“ geklickt haben. Vorher
+        werden keine Daten an Google übertragen.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.
+      </p>
+      <p>
+        <strong>Widerruf:</strong> Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie unten auf der Seite
+        „Cookie-Einstellungen“ öffnen und „Ablehnen“ wählen. Die Analyse-Cookies werden dabei gelöscht.
+      </p>
+      <p>
+        <strong>Übermittlung in die USA:</strong> Es ist nicht auszuschließen, dass Google Daten an die Google LLC in den USA übermittelt.
+        Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert; auf Grundlage des Angemessenheitsbeschlusses der Europäischen
+        Kommission ist die Übermittlung damit zulässig.
+      </p>
+      <p>
+        <strong>Speicherdauer:</strong> Google Analytics setzt die Cookies „_ga“ und „_ga_&lt;ID&gt;“ mit einer Speicherdauer von jeweils
+        2 Jahren. Die erhobenen Daten werden in Google Analytics nach Ablauf der eingestellten Aufbewahrungsdauer (höchstens 14 Monate) automatisch gelöscht.
+      </p>
+      <p>
+        Weitere Informationen finden Sie in der{" "}
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+          Datenschutzerklärung von Google
+        </a>
+        .
       </p>
 
-      <h2>10. Onlinemarketing</h2>
-      <p>
-        <strong>Google Ads:</strong> Mit Ihrer Einwilligung (Kategorie „Marketing“ im Cookie-Banner) messen wir über den Google Tag Manager
-        Conversions aus Google-Ads-Kampagnen (Google Ireland Limited).
-      </p>
-
-      <h2>11. Social-Media-Präsenzen</h2>
+      <h2>10. Social-Media-Präsenzen</h2>
       <p>
         Wir unterhalten Profile auf LinkedIn, Instagram/Facebook und YouTube. Die Betreiber der Plattformen verarbeiten die Daten der Besucher
         nach ihren eigenen Datenschutzbestimmungen.
       </p>
 
-      <h2>12. Dienste von Drittanbietern</h2>
+      <h2>11. Dienste von Drittanbietern</h2>
       <ul>
         <li>
           <strong>Schriftarten:</strong> Die Schriften dieser Website werden lokal ausgeliefert; es findet keine Verbindung zu Google Fonts statt.
@@ -132,7 +152,7 @@ export default function DatenschutzPage() {
         </li>
       </ul>
 
-      <h2>13. Ihre Rechte</h2>
+      <h2>12. Ihre Rechte</h2>
       <p>
         Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung
         (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Erteilte Einwilligungen können Sie jederzeit mit Wirkung für die
@@ -140,7 +160,7 @@ export default function DatenschutzPage() {
         für Datenschutzaufsicht (BayLDA), Ansbach.
       </p>
 
-      <h2>14. Hosting</h2>
+      <h2>13. Hosting</h2>
       <p>
         Die Website wird bei Netlify, Inc. (USA; zertifiziert nach dem EU-US Data Privacy Framework) gehostet. Dabei werden Server-Logfiles
         (IP-Adresse, Zeitpunkt, aufgerufene URL, Browser) für höchstens 30 Tage gespeichert.
