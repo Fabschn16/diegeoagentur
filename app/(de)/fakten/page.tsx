@@ -147,7 +147,7 @@ export default function FaktenPage() {
           k: "Offizielle Profile",
           v: (
             <>
-              <a href={site.social.linkedin} target="_blank" rel="noopener" className={linkCls}>LinkedIn (Daily Rocket)</a> ·{" "}
+              <a href={site.social.linkedin} target="_blank" rel="noopener" className={linkCls}>LinkedIn</a> ·{" "}
               <a href={site.social.instagram} target="_blank" rel="noopener" className={linkCls}>Instagram (Daily Rocket)</a>
             </>
           ),

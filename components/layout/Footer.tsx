@@ -67,6 +67,16 @@ export function Footer({ locale = "de" }: { locale?: Locale }) {
               <FooterLink href={L.contact}>{ui.contact}</FooterLink>
               <li>
                 <a
+                  href={site.social.linkedin}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-1 text-[0.92rem] text-fog transition-colors hover:text-paper"
+                >
+                  LinkedIn <ArrowUpRight className="size-3" />
+                </a>
+              </li>
+              <li>
+                <a
                   href={site.sister.url}
                   target="_blank"
                   rel="noopener"
