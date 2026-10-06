@@ -94,9 +94,12 @@ export const clients = [
   { name: "Pure Natural Choice", logo: "/images/kunden/pure-natural-choice.png" },
 ] as const;
 
-/** Google Tag Manager (GA4 läuft über den Container). Leer = kein Tracking. Geladen wird erst nach Einwilligung. */
+/**
+ * Google Analytics 4 über gtag.js. Leer = kein Tracking. Geladen wird erst nach „Akzeptieren“ im Cookie-Banner.
+ * Google Tag Manager (Container GTM-W478S359) ist derzeit nicht eingebunden, damit GA4 nicht doppelt zählt.
+ */
 export const analytics = {
-  gtmId: "GTM-W478S359",
+  ga4Id: "G-WQ297KDT64",
 } as const;
 
 export const cta = {
