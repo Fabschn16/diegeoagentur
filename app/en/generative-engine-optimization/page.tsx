@@ -193,8 +193,8 @@ export default function GeoPillarPageEn() {
           { label: "Get a GEO Audit", href: "/en/geo-audit", note: "Where your AI visibility stands today" },
           { label: "Measure AI visibility", href: "/en/ai-visibility", note: "Metrics and monitoring" },
           { label: "ChatGPT SEO explained", href: "/en/chatgpt-seo", note: "Visibility in ChatGPT" },
-          { label: "Google AI Overviews", href: "/en/google-ai-overviews", note: "Visibility in Google's AI answers" },
-          { label: "GEO Consulting", href: "/en/geo-consulting", note: "Strategy and workshops" },
+          { label: "SEO vs. GEO", href: "/en/insights/geo-vs-seo", note: "Differences and common ground" },
+          { label: "What is AI search?", href: "/en/insights/what-is-ai-search", note: "How AI search works" },
         ]}
       />
       <CtaBand locale="en" />

@@ -153,6 +153,7 @@ export default function GeoConsultingPage() {
         title="Further reading"
         links={[
           { label: "GEO agency: implementation, not just consulting", href: "/en/geo-agency", note: "If you want us to handle implementation" },
+          { label: "Developing a GEO strategy", href: "/en/insights/geo-strategy", note: "Guide" },
           { label: "What is Generative Engine Optimization?", href: "/en/generative-engine-optimization", note: "The basics for your team" },
         ]}
       />

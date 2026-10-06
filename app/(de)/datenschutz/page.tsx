@@ -97,14 +97,7 @@ export default function DatenschutzPage() {
         Handelsrelevante Unterlagen bewahren wir sechs Jahre (§ 257 HGB), steuerrelevante Unterlagen zehn Jahre (§ 147 AO) auf.
       </p>
 
-      <h2>9. Newsletter</h2>
-      <p>
-        Sofern Sie sich für einen Newsletter anmelden, erfolgt der Versand über Mailchimp (The Rocket Science Group LLC, USA; zertifiziert
-        nach dem EU-US Data Privacy Framework) im Double-Opt-In-Verfahren. Sie können sich jederzeit abmelden. Den Nachweis Ihrer Einwilligung
-        speichern wir für drei Jahre.
-      </p>
-
-      <h2>10. Webanalyse mit Google Analytics 4 und Google Tag Manager</h2>
+      <h2>9. Webanalyse mit Google Analytics 4 und Google Tag Manager</h2>
       <p>
         Mit Ihrer Einwilligung setzen wir Google Analytics 4 und den Google Tag Manager (Google Ireland Limited) ein. IP-Adressen werden
         gekürzt, die Auswertung erfolgt pseudonymisiert. Sie können die Erfassung zusätzlich über das Browser-Add-on unter{" "}
@@ -114,31 +107,19 @@ export default function DatenschutzPage() {
         verhindern.
       </p>
 
-      <h2>11. Onlinemarketing</h2>
-      <ul>
-        <li>
-          <strong>Google Ads:</strong> Conversion-Tracking mit Ihrer Einwilligung.
-        </li>
-        <li>
-          <strong>LinkedIn Insight Tag:</strong> Analyse und Retargeting mit Ihrer Einwilligung. Widerspruch unter{" "}
-          <a href="https://www.linkedin.com/psettings/guest-controls" target="_blank" rel="noopener">
-            linkedin.com/psettings/guest-controls
-          </a>
-          .
-        </li>
-        <li>
-          <strong>Meta Pixel:</strong> Mit Ihrer Einwilligung; gemeinsame Verantwortlichkeit mit Meta gemäß Art. 26 DSGVO. Speicherdauer
-          höchstens zwei Jahre.
-        </li>
-      </ul>
+      <h2>10. Onlinemarketing</h2>
+      <p>
+        <strong>Google Ads:</strong> Mit Ihrer Einwilligung (Kategorie „Marketing“ im Cookie-Banner) messen wir über den Google Tag Manager
+        Conversions aus Google-Ads-Kampagnen (Google Ireland Limited).
+      </p>
 
-      <h2>12. Social-Media-Präsenzen</h2>
+      <h2>11. Social-Media-Präsenzen</h2>
       <p>
         Wir unterhalten Profile auf LinkedIn, Instagram/Facebook und YouTube. Die Betreiber der Plattformen verarbeiten die Daten der Besucher
         nach ihren eigenen Datenschutzbestimmungen.
       </p>
 
-      <h2>13. Dienste von Drittanbietern</h2>
+      <h2>12. Dienste von Drittanbietern</h2>
       <ul>
         <li>
           <strong>Schriftarten:</strong> Die Schriften dieser Website werden lokal ausgeliefert; es findet keine Verbindung zu Google Fonts statt.
@@ -151,7 +132,7 @@ export default function DatenschutzPage() {
         </li>
       </ul>
 
-      <h2>14. Ihre Rechte</h2>
+      <h2>13. Ihre Rechte</h2>
       <p>
         Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung
         (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Erteilte Einwilligungen können Sie jederzeit mit Wirkung für die
@@ -159,14 +140,14 @@ export default function DatenschutzPage() {
         für Datenschutzaufsicht (BayLDA), Ansbach.
       </p>
 
-      <h2>15. Hosting</h2>
+      <h2>14. Hosting</h2>
       <p>
         Die Website wird bei Netlify, Inc. (USA; zertifiziert nach dem EU-US Data Privacy Framework) gehostet. Dabei werden Server-Logfiles
         (IP-Adresse, Zeitpunkt, aufgerufene URL, Browser) für höchstens 30 Tage gespeichert.
       </p>
 
       <p>
-        <em>Stand: September 2026</em>
+        <em>Stand: Oktober 2026</em>
       </p>
     </LegalPage>
   );

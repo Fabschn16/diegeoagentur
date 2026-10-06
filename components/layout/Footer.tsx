@@ -8,7 +8,7 @@ import type { Locale } from "@/lib/i18n";
 
 const links = {
   de: { consulting: "/geo-beratung", about: "/ueber-uns", facts: "/fakten", agency: "/geo-agentur", geo: "/generative-engine-optimization", knowledge: "/ratgeber", check: "/geo-audit", contact: "/kontakt" },
-  en: { consulting: "/en/geo-consulting", about: "/en/about", facts: "/en/facts", agency: "/en/geo-agency", geo: "/en/generative-engine-optimization", knowledge: "", check: "/en/geo-audit", contact: "/en/contact" },
+  en: { consulting: "/en/geo-consulting", about: "/en/about", facts: "/en/facts", agency: "/en/geo-agency", geo: "/en/generative-engine-optimization", knowledge: "/en/insights", check: "/en/geo-audit", contact: "/en/contact" },
 };
 
 export function Footer({ locale = "de" }: { locale?: Locale }) {

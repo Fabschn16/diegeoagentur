@@ -18,6 +18,7 @@ Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4. Statischer Expor
 - `lib/site.ts` – zentrale Unternehmensdaten, Team, **Preise** (`pricing`) – überall verwendet (Seiten, Schema, llms.txt)
 - `lib/faq.ts` – Haupt-FAQ; `lib/services.ts` – Leistungen; `lib/platforms.ts` + `content/platformQa.ts` – Plattformseiten
 - `content/articles.ts` + `content/articles-2.ts` – Ratgeber „GEO Wissen“ (Inline-Links: `[Text](/pfad)`)
+- Englische Artikel („GEO Insights“, /en/insights/): `content/en/articles-*.ts`, Slug-Zuordnung DE→EN in `lib/en/articleSlugs.ts`. Neuer Artikel: beide Sprachen anlegen und Slug dort eintragen.
 - `content/pillar.ts` – GEO-Definition, Glossar, Pillar-Abschnitte
 - `lib/schema.ts` – Schema.org-Graph mit festen @ids
 - `app/llms.txt/route.ts`, `app/sitemap.ts`, `app/robots.ts`, `public/_redirects`, `public/_headers`

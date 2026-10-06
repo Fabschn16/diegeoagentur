@@ -1,6 +1,7 @@
 import { cases } from "@/lib/cases";
+import type { Locale } from "@/lib/i18n";
 
-const lenses = [
+const lensesDe = [
   {
     q: "Wer wird bei Vergleichsfragen genannt?",
     d: "„Welcher Anbieter ist der beste für …?“ ist die Frage mit der höchsten Kaufnähe. Wir zeigen, wer dort auftaucht – und wer fehlt.",
@@ -15,7 +16,47 @@ const lenses = [
   },
 ];
 
-export function Insights({ index = "08" }: { index?: string }) {
+const lensesEn = [
+  {
+    q: "Who is named in comparison questions?",
+    d: "“Which provider is best for …?” is the question closest to a purchase. We show who appears there, and who is missing.",
+  },
+  {
+    q: "Which sources keep coming up?",
+    d: "AI systems often rely on the same portals, comparisons and specialist articles again and again. These sources are your lever.",
+  },
+  {
+    q: "How is your brand described, and is it accurate?",
+    d: "Outdated services, wrong locations, unclear positioning: we check whether the AI represents your company correctly.",
+  },
+];
+
+const copy = {
+  de: {
+    lenses: lensesDe,
+    title: ["Ergebnisse zeigen wir,", "wenn sie belegbar sind."],
+    lead: "Im GEO-Markt kursieren viele Prozentzahlen ohne Methodik. Wir veröffentlichen Fallstudien nur mit Freigabe unserer Kunden – und mit offengelegtem Prompt-Katalog, Zeitraum und Plattformen.",
+    method: "Methodik",
+    cases: "Fallstudien",
+    soon: "Erste Fallstudien sind in Vorbereitung.",
+    preview: "Sie möchten vorab sehen, wie ein Report aussieht? Im Erstgespräch zeigen wir Ihnen unsere Auswertungsstruktur.",
+    question: "Analysefrage",
+  },
+  en: {
+    lenses: lensesEn,
+    title: ["We show results", "when they can be proven."],
+    lead: "The GEO market is full of percentages without a method behind them. We only publish case studies with our clients’ approval, and with the prompt catalogue, period and platforms disclosed.",
+    method: "Method",
+    cases: "Case studies",
+    soon: "Our first case studies are in preparation.",
+    preview: "Want to see what a report looks like first? In the intro call we show you how we structure our analysis.",
+    question: "Analysis question",
+  },
+};
+
+export function Insights({ index = "08", locale = "de" }: { index?: string; locale?: Locale }) {
+  const t = copy[locale];
+  const lenses = t.lenses;
   return (
     <section aria-labelledby="insights" className="py-24 lg:py-36">
       <div className="container-x">
@@ -27,12 +68,11 @@ export function Insights({ index = "08" }: { index?: string }) {
               GEO Insights
             </p>
             <h2 id="insights" className="text-h2 font-medium text-balance">
-              Ergebnisse zeigen wir, <span className="em">wenn sie belegbar sind.</span>
+              {t.title[0]} <span className="em">{t.title[1]}</span>
             </h2>
           </div>
           <p className="text-lead text-muted lg:col-span-5 lg:pb-2">
-            Im GEO-Markt kursieren viele Prozentzahlen ohne Methodik. Wir veröffentlichen Fallstudien nur mit Freigabe unserer Kunden –
-            und mit offengelegtem Prompt-Katalog, Zeitraum und Plattformen.
+            {t.lead}
           </p>
         </div>
 
@@ -53,7 +93,7 @@ export function Insights({ index = "08" }: { index?: string }) {
                     </div>
                   ))}
                 </dl>
-                <p className="mt-6 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-muted">Methodik: {c.method}</p>
+                <p className="mt-6 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-muted">{t.method}: {c.method}</p>
               </li>
             ))}
           </ul>
@@ -64,19 +104,19 @@ export function Insights({ index = "08" }: { index?: string }) {
               data-reveal
             >
               <div>
-                <p className="eyebrow text-muted">Fallstudien</p>
+                <p className="eyebrow text-muted">{t.cases}</p>
                 <p className="mt-5 text-[1.35rem] font-medium leading-snug tracking-[-0.02em]">
-                  Erste Fallstudien sind in Vorbereitung.
+                  {t.soon}
                 </p>
               </div>
               <p className="mt-10 text-[0.9rem] leading-relaxed text-muted">
-                Sie möchten vorab sehen, wie ein Report aussieht? Im Erstgespräch zeigen wir Ihnen unsere Auswertungsstruktur.
+                {t.preview}
               </p>
             </div>
             <ol className="grid gap-px overflow-hidden rounded-[24px] border border-line bg-line sm:grid-cols-3 lg:col-span-8">
               {lenses.map((l, i) => (
                 <li key={l.q} className="flex flex-col bg-card p-7" data-reveal style={{ ["--reveal-delay" as string]: `${i * 70}ms` }}>
-                  <span className="font-mono text-[0.68rem] text-muted">Analysefrage {String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-mono text-[0.68rem] text-muted">{t.question} {String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-8 text-[1.15rem] font-medium leading-snug tracking-[-0.01em]">{l.q}</h3>
                   <p className="mt-3 text-[0.9rem] leading-relaxed text-muted">{l.d}</p>
                 </li>

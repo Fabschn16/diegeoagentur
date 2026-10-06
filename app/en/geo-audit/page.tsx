@@ -112,7 +112,7 @@ const auditQa: QA[] = [
     id: "ablauf",
     q: "How does a GEO Audit work?",
     a: [
-      "After a short initial call, we agree on topics, competitors and the question catalogue together, run the queries and reviews, and present the results to you in a meeting.",
+      "After a short initial call, we agree on topics, competitors and the question catalogue together, run the queries and reviews, and present the results to you in a meeting. The process in detail is described in the article [GEO Audit: process and scope](/en/insights/geo-audit-process).",
     ],
   },
 ];
@@ -257,7 +257,7 @@ export default function GeoAuditPage() {
         title="Further reading"
         links={[
           { label: "AI Visibility Monitoring", href: "/en/ai-visibility", note: "After the audit: ongoing measurement" },
-          { label: "Facts about Die GEO Agentur", href: "/en/facts", note: "Key data, team and how we measure" },
+          { label: "Our methodology", href: "/en/insights/methodology-prompt-catalogue", note: "How we measure with the prompt catalogue" },
           { label: "What does a GEO agency do?", href: "/en/geo-agency", note: "Services and costs" },
         ]}
       />

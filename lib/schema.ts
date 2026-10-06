@@ -261,7 +261,7 @@ export function articleSchema(opts: {
     url: abs(opts.path),
     datePublished: opts.datePublished,
     dateModified: opts.dateModified,
-    inLanguage: "de-DE",
+    inLanguage: isEn(opts.path) ? "en" : "de-DE",
     ...(opts.section ? { articleSection: opts.section } : {}),
     ...(opts.about ? { about: opts.about.map((t) => ({ "@type": "Thing", name: t })), keywords: opts.about.join(", ") } : {}),
     author: { "@id": personId(opts.authorId) },

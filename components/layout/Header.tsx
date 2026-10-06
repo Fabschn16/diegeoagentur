@@ -16,7 +16,7 @@ const navs = {
     { label: "Kontakt", href: "/kontakt" },
   ],
   en: [
-    { label: "What is GEO?", href: "/en/generative-engine-optimization" },
+    { label: "GEO Insights", href: "/en/insights" },
     { label: "About us", href: "/en/about" },
     { label: "Contact", href: "/en/contact" },
   ],

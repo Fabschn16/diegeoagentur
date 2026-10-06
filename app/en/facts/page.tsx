@@ -156,7 +156,7 @@ export default function FactsPageEn() {
       rows: [
         { k: "Focus", v: platformServices.map((p) => p.title).join(", ") },
         { k: "Also", v: "Microsoft Copilot and Claude" },
-        { k: "Foundation", v: "Traditional search engine optimisation remains the foundation; GEO complements it" },
+        { k: "Foundation", v: <>Traditional search engine optimisation remains the foundation; GEO complements it (<Link href="/en/insights/geo-vs-seo" className={linkCls}>SEO vs. GEO</Link>)</> },
       ],
     },
     {
@@ -164,7 +164,7 @@ export default function FactsPageEn() {
       heading: "Working principles",
       rows: [
         { k: "No guarantees", v: "We do not guarantee mentions or positions in AI answers. What can be improved are the preconditions; what can be measured is the progress." },
-        { k: "Transparent measurement", v: "A fixed, disclosed prompt catalogue" },
+        { k: "Transparent measurement", v: <>A fixed, disclosed prompt catalogue (<Link href="/en/insights/methodology-prompt-catalogue" className={linkCls}>methodology</Link>)</> },
         { k: "No manipulation", v: "No hidden text, bought reviews, link farms or artificial mass mentions" },
         { k: "Direct contact", v: "Clients speak directly with the managing directors, not with changing account managers" },
       ],

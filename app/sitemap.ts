@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { routes } from "@/lib/i18n";
+import { articlesEn } from "@/content/en/articles";
 
 const url = (p: string) => `${site.url}${p === "/" ? "/" : `${p}/`}`;
 
@@ -38,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
   return [
     ...[...pages, ...enPages].map(([p, priority]) => ({ url: url(p), lastModified, priority, ...alternatesFor(p) })),
-    ...articles.map((a) => ({ url: `${site.url}/ratgeber/${a.slug}/`, lastModified: new Date(a.updated), priority: 0.6 })),
+    ...articles.map((a) => ({ url: url(`/ratgeber/${a.slug}`), lastModified: new Date(a.updated), priority: 0.6, ...alternatesFor(`/ratgeber/${a.slug}`) })),
+    ...articlesEn.map((a) => ({ url: url(`/en/insights/${a.slug}`), lastModified: new Date(a.updated), priority: 0.6, ...alternatesFor(`/en/insights/${a.slug}`) })),
   ];
 }

@@ -2,6 +2,7 @@ import { site } from "@/lib/site";
 import { l10n } from "@/lib/l10n";
 import { mainFaq } from "@/lib/en/faq";
 import { geoDefinition, glossary } from "@/content/en/pillar";
+import { articlesEn, categoriesEn } from "@/content/en/articles";
 import { stripLinks } from "@/components/ui/RichText";
 
 export const dynamic = "force-static";
@@ -52,11 +53,23 @@ ${platformServices.map((p) => `- [${p.title}](${u(p.href)}): ${p.short}`).join("
 ## Terms
 ${glossary.map((g) => `- ${g.term}${g.term !== g.name ? ` (${g.name})` : ""}: ${stripLinks(g.description)}`).join("\n")}
 
+## GEO Insights (guides)
+${categoriesEn
+  .map(
+    (c) =>
+      `### ${c.name}\n${articlesEn
+        .filter((a) => a.category === c.key)
+        .map((a) => `- [${a.title}](${u(`/en/insights/${a.slug}`)}): ${stripLinks(a.answer)}`)
+        .join("\n")}`,
+  )
+  .join("\n\n")}
+
 ## Frequently asked questions
 ${mainFaq.map((f) => `### ${f.q}\n${stripLinks(f.a[0])}`).join("\n\n")}
 
 ## Optional
 - [About us](${u("/en/about")})
+- [GEO Insights overview](${u("/en/insights")})
 - [Contact](${u("/en/contact")})
 - [German version and llms.txt](${site.url}/llms.txt)
 - [Legal notice (German)](${u("/impressum")})

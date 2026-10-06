@@ -3,6 +3,8 @@
  * `routes` ordnet jeder deutschen Seite ihr englisches Gegenstück zu – für den Sprachumschalter und hreflang.
  * Seiten ohne Gegenstück (z. B. Impressum, Datenschutz) fehlen hier bewusst.
  */
+import { articleSlugs } from "./en/articleSlugs";
+
 export type Locale = "de" | "en";
 
 export const routes: [de: string, en: string][] = [
@@ -20,6 +22,8 @@ export const routes: [de: string, en: string][] = [
   ["/ueber-uns", "/en/about"],
   ["/fakten", "/en/facts"],
   ["/kontakt", "/en/contact"],
+  ["/ratgeber", "/en/insights"],
+  ...Object.entries(articleSlugs).map(([de, en]) => [`/ratgeber/${de}`, `/en/insights/${en}`] as [string, string]),
 ];
 
 const strip = (p: string) => (p.length > 1 ? p.replace(/\/+$/, "") : p);
