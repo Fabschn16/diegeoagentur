@@ -96,7 +96,7 @@ export const clients = [
 
 /** Google Tag Manager (GA4 läuft über den Container). Leer = kein Tracking. Geladen wird erst nach Einwilligung. */
 export const analytics = {
-  gtmId: "",
+  gtmId: "GTM-W478S359",
 } as const;
 
 export const cta = {
