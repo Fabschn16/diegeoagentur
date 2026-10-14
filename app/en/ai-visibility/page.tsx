@@ -11,7 +11,7 @@ import { pageMeta } from "@/lib/seo";
 import { l10n } from "@/lib/l10n";
 
 const path = "/en/ai-visibility";
-const title = "AI Visibility: Measure & Improve Your AI Visibility (Monitoring)";
+const title = "AI Visibility: Measure and Improve Your AI Visibility";
 const description =
   "AI Visibility Monitoring by Die GEO Agentur: we measure how often and in what context your brand is mentioned in ChatGPT, Gemini, Perplexity and Google AI Overviews, with share of voice, citations and competitor benchmarking.";
 

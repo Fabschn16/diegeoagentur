@@ -13,7 +13,7 @@ import { site, pricing } from "@/lib/site";
 const path = "/geo-agentur";
 const title = "GEO Agentur: Leistungen, Ablauf, Kosten & Auswahlkriterien";
 const description =
-  "Was macht eine GEO Agentur, was kostet sie und woran erkennen Sie eine gute? Die GEO Agentur aus Passau erklärt Leistungen, Zusammenarbeit und Erfolgsmessung bei Generative Engine Optimization – für Unternehmen in ganz Deutschland.";
+  "Was macht eine GEO Agentur, was kostet sie und woran erkennen Sie eine gute? Die GEO Agentur aus Passau erklärt Leistungen, Ablauf und Erfolgsmessung.";
 
 export const metadata = pageMeta({ title, description, path });
 

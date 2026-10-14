@@ -11,7 +11,7 @@ import { pageMeta } from "@/lib/seo";
 import { pricing } from "@/lib/site";
 
 const path = "/ai-visibility";
-const title = "AI Visibility: KI-Sichtbarkeit messen & verbessern (Monitoring)";
+const title = "AI Visibility: KI-Sichtbarkeit messen und verbessern";
 const description =
   "AI Visibility Monitoring von Die GEO Agentur: Wir messen, wie oft und in welchem Kontext Ihre Marke in ChatGPT, Gemini, Perplexity und Google AI Overviews genannt wird – mit Share of Voice, Zitierungen und Wettbewerbsvergleich.";
 

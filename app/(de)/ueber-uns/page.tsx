@@ -12,7 +12,7 @@ import { pageMeta } from "@/lib/seo";
 
 const title = "Über Die GEO Agentur: Team, Hintergrund & Daily Rocket";
 const description =
-  "Die GEO Agentur verbindet Erfahrung aus Performance Marketing, Tracking, SEO und Datenanalyse mit Generative Engine Optimization. Lernen Sie Fabian Schnabel und Jan Hugo kennen.";
+  "Die GEO Agentur verbindet Performance Marketing, Tracking, SEO und Datenanalyse mit GEO. Lernen Sie die Gründer Fabian Schnabel und Jan Hugo kennen.";
 
 export const metadata = pageMeta({ title, description, path: "/ueber-uns" });
 

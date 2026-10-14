@@ -78,7 +78,7 @@ export const articlesEnA: Article[] = [
   {
     slug: "answer-engine-optimization",
     title: "What is Answer Engine Optimization (AEO)?",
-    metaTitle: "Answer Engine Optimization (AEO): Definition & how it differs from GEO",
+    metaTitle: "Answer Engine Optimization (AEO): Definition vs. GEO",
     description:
       "Answer Engine Optimization (AEO) explained simply: definition, origins, how it differs from SEO and GEO, and how to structure content for answer engines.",
     category: "Grundlagen",
@@ -311,7 +311,7 @@ export const articlesEnA: Article[] = [
   {
     slug: "get-visible-in-chatgpt",
     title: "Getting visible in ChatGPT: 7 levers for businesses",
-    metaTitle: "How to get visible in ChatGPT: 7 levers for businesses (guide)",
+    metaTitle: "How to get visible in ChatGPT: 7 levers for businesses",
     description:
       "How does my company become visible in ChatGPT? Seven concrete levers – from crawlability, content and entity to external sources and monitoring.",
     category: "Praxis",

@@ -12,7 +12,7 @@ import { pageMeta } from "@/lib/seo";
 
 const { coreServices, platformServices } = l10n("en");
 
-const title = "GEO Services: Audit, AI SEO, Content, Technical GEO & Monitoring";
+const title = "GEO Services: Audit, AI SEO, Content & Monitoring";
 const description =
   "All services from Die GEO Agentur: GEO Audit, AI Visibility Monitoring, Content for AI Search, Entity Optimization, Technical GEO and Digital Authority, for ChatGPT, Gemini, Perplexity and AI Overviews.";
 

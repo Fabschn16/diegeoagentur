@@ -13,7 +13,7 @@ import { pageMeta } from "@/lib/seo";
 const path = "/generative-engine-optimization";
 const title = "Generative Engine Optimization (GEO): Definition & Faktoren";
 const description =
-  "Was ist Generative Engine Optimization (GEO)? Definition, Funktionsweise, Einflussfaktoren, Abgrenzung zu SEO, AEO und LLMO sowie Messung – der Leitfaden zur KI-Suchmaschinenoptimierung.";
+  "Was ist Generative Engine Optimization (GEO)? Definition, Funktionsweise, Einflussfaktoren, Abgrenzung zu SEO und Messung – der Leitfaden zur KI-Suche.";
 
 export const metadata = pageMeta({ title, description, path, type: "article" });
 

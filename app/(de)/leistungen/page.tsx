@@ -10,9 +10,9 @@ import { coreServices, platformServices } from "@/lib/services";
 import { breadcrumbSchema, graph, serviceSchema, webPageSchema } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 
-const title = "GEO Leistungen: Audit, KI-SEO, Content, Technical GEO & Monitoring";
+const title = "GEO Leistungen: Audit, KI-SEO, Content & Monitoring";
 const description =
-  "Alle Leistungen der GEO Agentur: GEO Audit, AI Visibility Monitoring, Content für AI Search, Entity Optimization, Technical GEO und Digital Authority – für ChatGPT, Gemini, Perplexity und AI Overviews.";
+  "Leistungen der GEO Agentur: GEO Audit, AI Visibility Monitoring, Content, Entity Optimization und Technical GEO für ChatGPT, Gemini und AI Overviews.";
 
 export const metadata = pageMeta({ title, description, path: "/leistungen" });
 

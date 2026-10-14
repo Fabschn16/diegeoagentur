@@ -3,12 +3,17 @@ import { site } from "./site";
 import { siteEn } from "./en/site";
 import { languageAlternates, localeOf } from "./i18n";
 
+const brandSuffix = ` | ${site.name}`;
+/** Google kürzt Titel ab etwa 60 Zeichen. Die Marke nur anhängen, wenn der Titel dann noch vollständig sichtbar bleibt. */
+const titleMaxLength = 60;
+
 /** Seiten-Metadaten. Sprache, og:locale und hreflang-Alternativen ergeben sich aus dem Pfad (/en/… = Englisch). */
 export function pageMeta(opts: { title: string; description: string; path: string; noindex?: boolean; type?: "website" | "article" }): Metadata {
   const en = localeOf(opts.path) === "en";
   const languages = languageAlternates(opts.path);
+  const title = opts.title.length + brandSuffix.length <= titleMaxLength ? opts.title : { absolute: opts.title };
   return {
-    title: opts.title,
+    title,
     description: opts.description,
     alternates: { canonical: opts.path, ...(languages ? { languages } : {}) },
     openGraph: {

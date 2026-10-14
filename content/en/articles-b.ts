@@ -11,7 +11,7 @@ export const articlesEnB: Article[] = [
   {
     slug: "chatgpt-recommends-competitors",
     title: "ChatGPT recommends your competitors? Causes and what you can do",
-    metaTitle: "Why does ChatGPT recommend my competitors? Causes & solutions",
+    metaTitle: "Why does ChatGPT recommend my competitors? Causes & fixes",
     description:
       "Why does ChatGPT name other providers but not your company? The most common causes – and how to work out, step by step, what needs to be done.",
     category: "Praxis",
@@ -318,7 +318,7 @@ export const articlesEnB: Article[] = [
   {
     slug: "entity-optimization",
     title: "Entity Optimization: how AI systems understand your brand",
-    metaTitle: "Entity Optimization for AI Search: strengthen your brand as an entity",
+    metaTitle: "Entity Optimization: Strengthen Your Brand for AI Search",
     description:
       "Entity Optimization explained: what an entity is, why language models and search engines think in entities and how companies can describe their brand clearly and consistently.",
     category: "Strategie",

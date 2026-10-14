@@ -12,9 +12,9 @@ import { breadcrumbSchema, faqSchema, graph, serviceSchema, webPageSchema } from
 import { pageMeta } from "@/lib/seo";
 import { bookingHref, pricing } from "@/lib/site";
 
-const title = "GEO Audit: KI-Sichtbarkeit in ChatGPT, Gemini & Co. prüfen lassen";
+const title = "GEO Audit: KI-Sichtbarkeit in ChatGPT & Co. prüfen";
 const description =
-  "GEO Audit der GEO Agentur: Wir analysieren, ob und wie ChatGPT, Gemini, Perplexity und Google AI Overviews Ihre Marke nennen, welche Wettbewerber auftauchen und welche Quellen die Antworten prägen. Kostenloser Einstieg.";
+  "GEO Audit: Wir prüfen, ob ChatGPT, Gemini, Perplexity und AI Overviews Ihre Marke nennen, welche Wettbewerber auftauchen und warum. Kostenloser Einstieg.";
 
 export const metadata = pageMeta({ title, description, path: "/geo-audit" });
 
