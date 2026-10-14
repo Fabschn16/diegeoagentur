@@ -13,7 +13,7 @@ import { l10n } from "@/lib/l10n";
 const { pricing } = l10n("en");
 
 const path = "/en/geo-consulting";
-const title = "GEO Consulting: Strategy, Workshops & Sparring for AI Visibility";
+const title = "GEO Consulting: Strategy & Workshops for AI Visibility";
 const description =
   "GEO consulting for marketing and SEO teams: strategy, workshops, roadmaps and ongoing sparring for visibility in ChatGPT, Gemini, Perplexity and Google AI Overviews.";
 

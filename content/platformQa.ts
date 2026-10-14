@@ -16,7 +16,7 @@ export const platformExtras: Record<string, PlatformExtra> = {
   "chatgpt-seo": {
     metaTitle: "ChatGPT SEO: In ChatGPT sichtbar werden & als Quelle genannt",
     metaDescription:
-      "Was ist ChatGPT SEO und wie funktioniert die ChatGPT-Suche? Wie ChatGPT Quellen auswählt, welche Faktoren zählen und wie Die GEO Agentur Unternehmen in ChatGPT sichtbar macht.",
+      "Was ist ChatGPT SEO? Wie die ChatGPT-Suche Quellen auswählt, welche Faktoren zählen und wie Die GEO Agentur Unternehmen in ChatGPT sichtbar macht.",
     qaTitle: ["ChatGPT SEO", "im Detail."],
     qa: [
       {
@@ -88,7 +88,7 @@ export const platformExtras: Record<string, PlatformExtra> = {
   "gemini-seo": {
     metaTitle: "Gemini SEO: Sichtbarkeit in Google Gemini verbessern",
     metaDescription:
-      "Gemini SEO erklärt: Wie Google Gemini Informationen findet, welche Rolle die Google-Suche spielt und wie Unternehmen in Gemini-Antworten korrekt dargestellt werden. Von Die GEO Agentur.",
+      "Gemini SEO erklärt: Wie Google Gemini Informationen findet, welche Rolle die Google-Suche spielt und wie Unternehmen in Gemini-Antworten erscheinen.",
     qaTitle: ["Gemini SEO", "im Detail."],
     qa: [
       {
@@ -140,7 +140,7 @@ export const platformExtras: Record<string, PlatformExtra> = {
   "perplexity-seo": {
     metaTitle: "Perplexity SEO: Als Quelle in Perplexity zitiert werden",
     metaDescription:
-      "Perplexity SEO erklärt: Wie Perplexity Quellen sucht und zitiert, welche Inhalte bevorzugt werden und wie Ihre Website zur zitierten Quelle wird. Von Die GEO Agentur.",
+      "Perplexity SEO erklärt: Wie Perplexity Quellen sucht und zitiert, welche Inhalte bevorzugt werden und wie Ihre Website zur zitierten Quelle wird.",
     qaTitle: ["Perplexity SEO", "im Detail."],
     qa: [
       {
@@ -189,9 +189,9 @@ export const platformExtras: Record<string, PlatformExtra> = {
   },
 
   "google-ai-overviews": {
-    metaTitle: "Google AI Overviews Optimierung: In der Übersicht mit KI erscheinen",
+    metaTitle: "Google AI Overviews Optimierung: In der KI-Übersicht",
     metaDescription:
-      "Google AI Overviews Optimierung: Was AI Overviews und AI Mode sind, wie Google Quellen auswählt und wie Ihre Inhalte in der „Übersicht mit KI“ verlinkt werden. Von Die GEO Agentur.",
+      "Was AI Overviews und AI Mode sind, wie Google Quellen auswählt und wie Ihre Inhalte in der „Übersicht mit KI“ verlinkt werden.",
     qaTitle: ["Google AI Overviews", "im Detail."],
     qa: [
       {

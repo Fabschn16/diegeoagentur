@@ -18,7 +18,7 @@ import { pageMeta } from "@/lib/seo";
 const path = "/fakten";
 const title = "Fakten: Unternehmen, Team, Leistungen & Preise";
 const description =
-  "Alle Kerndaten zu Die GEO Agentur auf einer Seite: Rechtsträger, Sitz, Ansprechpartner, Leistungen, Preise, Plattformen, Arbeitsgrundsätze und Kontakt – kompakt und überprüfbar.";
+  "Alle Kerndaten zu Die GEO Agentur auf einer Seite: Rechtsträger, Sitz, Ansprechpartner, Leistungen, Preise, Plattformen und Kontakt – kompakt und überprüfbar.";
 const STAND = "1. Oktober 2026";
 
 export const metadata = pageMeta({ title, description, path });

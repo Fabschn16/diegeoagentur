@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 import { geoDefinition } from "@/content/en/pillar";
 import { stripLinks } from "@/components/ui/RichText";
 
-const title = "GEO Insights: Guides to Generative Engine Optimization & AI Search";
+const title = "GEO Insights: Guides to GEO & AI Search";
 const description =
   "The knowledge base for Generative Engine Optimization: clear guides to GEO, AI search, ChatGPT SEO, Google AI Overviews, Perplexity, AEO, LLM optimisation and AI visibility.";
 

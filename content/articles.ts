@@ -117,7 +117,7 @@ const baseArticles: Article[] = [
   {
     slug: "answer-engine-optimization",
     title: "Was ist Answer Engine Optimization (AEO)?",
-    metaTitle: "Answer Engine Optimization (AEO): Definition & Unterschied zu GEO",
+    metaTitle: "Answer Engine Optimization (AEO): Definition & GEO-Vergleich",
     description:
       "Answer Engine Optimization (AEO) einfach erklärt: Definition, Herkunft, Unterschied zu SEO und GEO und wie Inhalte für Antwortmaschinen strukturiert werden.",
     category: "Grundlagen",
@@ -289,7 +289,7 @@ const baseArticles: Article[] = [
   {
     slug: "copilot-und-claude",
     title: "Microsoft Copilot und Claude: Was Unternehmen über diese KI-Assistenten wissen sollten",
-    metaTitle: "Copilot & Claude: Sichtbarkeit in Microsoft Copilot und Claude",
+    metaTitle: "Copilot & Claude: Sichtbar in Microsoft Copilot und Claude",
     description:
       "Wie Microsoft Copilot und Claude von Anthropic Informationen aus dem Web nutzen, welche Crawler relevant sind und was Unternehmen für ihre Sichtbarkeit in diesen KI-Assistenten tun können.",
     category: "Plattformen",
@@ -350,7 +350,7 @@ const baseArticles: Article[] = [
   {
     slug: "in-chatgpt-sichtbar-werden",
     title: "In ChatGPT sichtbar werden: 7 Hebel für Unternehmen",
-    metaTitle: "In ChatGPT sichtbar werden: 7 Hebel für Unternehmen (Anleitung)",
+    metaTitle: "In ChatGPT sichtbar werden: 7 Hebel für Unternehmen",
     description:
       "Wie wird mein Unternehmen in ChatGPT sichtbar? Sieben konkrete Hebel – von der Crawlbarkeit über Inhalte und Entität bis zu externen Quellen und Monitoring.",
     category: "Praxis",
@@ -412,7 +412,7 @@ const baseArticles: Article[] = [
   {
     slug: "chatgpt-empfiehlt-wettbewerber",
     title: "ChatGPT empfiehlt Ihre Wettbewerber? Ursachen und was Sie tun können",
-    metaTitle: "Warum empfiehlt ChatGPT meine Wettbewerber? Ursachen & Lösungen",
+    metaTitle: "Warum empfiehlt ChatGPT meine Wettbewerber? Gründe & Lösung",
     description:
       "Warum nennt ChatGPT andere Anbieter, aber nicht Ihr Unternehmen? Die häufigsten Ursachen – und wie Sie Schritt für Schritt herausfinden, was zu tun ist.",
     category: "Praxis",

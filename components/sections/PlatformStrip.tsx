@@ -68,7 +68,7 @@ export function PlatformStrip({ locale = "de" }: { locale?: Locale }) {
             ))}
           </ul>
         </div>
-        <p className="mt-8 text-[0.74rem] text-muted/80">
+        <p className="mt-8 text-[0.74rem] text-muted">
           {t.footnote}
         </p>
       </div>

@@ -11,7 +11,7 @@ export const newArticles: Article[] = [
   {
     slug: "meta-ai",
     title: "Meta AI: Was Unternehmen über den KI-Assistenten in WhatsApp, Instagram und Facebook wissen sollten",
-    metaTitle: "Meta AI für Unternehmen: Sichtbarkeit im KI-Assistenten von Meta",
+    metaTitle: "Meta AI für Unternehmen: Sichtbar im KI-Assistenten von Meta",
     description:
       "Meta AI ist in WhatsApp, Instagram, Facebook und Messenger integriert. Wie der KI-Assistent Informationen aus dem Web nutzt, welche Meta-Crawler relevant sind und was Unternehmen für ihre Sichtbarkeit tun können.",
     category: "Plattformen",
@@ -384,7 +384,7 @@ export const newArticles: Article[] = [
   {
     slug: "geo-e-commerce",
     title: "GEO für E-Commerce: Wie Online-Shops in KI-Kaufberatungen auftauchen",
-    metaTitle: "GEO für E-Commerce: Produkte in ChatGPT & Co. sichtbar machen",
+    metaTitle: "GEO für E-Commerce: Produkte in ChatGPT sichtbar machen",
     description:
       "Generative Engine Optimization für Online-Shops: Wie KI-Systeme Produkte empfehlen, welche Rolle Produktdaten, Testberichte und Kaufberatung spielen und was Shops konkret tun können.",
     category: "Strategie",

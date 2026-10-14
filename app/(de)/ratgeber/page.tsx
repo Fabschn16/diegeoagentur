@@ -8,9 +8,9 @@ import { abs, breadcrumbSchema, graph, webPageSchema } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 import { geoDefinition } from "@/content/pillar";
 
-const title = "GEO Wissen: Ratgeber zu Generative Engine Optimization & AI Search";
+const title = "GEO Wissen: Ratgeber zu GEO und AI Search";
 const description =
-  "Die Knowledge Base zu Generative Engine Optimization: verständliche Ratgeber zu GEO, AI Search, ChatGPT SEO, Google AI Overviews, Perplexity, AEO, LLM Optimization und KI-Sichtbarkeit.";
+  "Ratgeber zu Generative Engine Optimization: GEO, AI Search, ChatGPT SEO, Google AI Overviews, Perplexity, AEO und KI-Sichtbarkeit verständlich erklärt.";
 
 export const metadata = pageMeta({ title, description, path: "/ratgeber" });
 

@@ -10,9 +10,9 @@ import { breadcrumbSchema, graph, serviceSchema, webPageSchema } from "@/lib/sch
 import { pageMeta } from "@/lib/seo";
 import { pricing } from "@/lib/site";
 
-const title = "GEO Beratung: Strategie, Workshops & Sparring für KI-Sichtbarkeit";
+const title = "GEO Beratung: Strategie & Workshops für KI-Sichtbarkeit";
 const description =
-  "GEO Beratung für Marketing- und SEO-Teams: Strategie, Workshops, Roadmaps und laufendes Sparring zur Sichtbarkeit in ChatGPT, Gemini, Perplexity und Google AI Overviews.";
+  "GEO Beratung für Marketing- und SEO-Teams: Strategie, Workshops, Roadmaps und Sparring für Sichtbarkeit in ChatGPT, Gemini, Perplexity und AI Overviews.";
 
 export const metadata = pageMeta({ title, description, path: "/geo-beratung" });
 
