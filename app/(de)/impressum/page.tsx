@@ -2,14 +2,14 @@ import { LegalPage } from "@/components/ui/LegalPage";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta({ title: "Impressum", description: `Impressum von ${site.name} – ein Angebot der ${site.legalEntity}.`, path: "/impressum", noindex: true });
+export const metadata = pageMeta({ title: "Impressum", description: `Impressum von ${site.name} – eine Marke der ${site.legalEntity}.`, path: "/impressum", noindex: true });
 
 export default function ImpressumPage() {
   const l = site.legal;
   return (
     <LegalPage title="Impressum" path="/impressum">
       <p>
-        {site.name} ist ein Angebot der {site.legalEntity}.
+        {site.name} ist eine Marke der {site.legalEntity}.
       </p>
       <h2>Angaben gemäß § 5 DDG</h2>
       <p>
